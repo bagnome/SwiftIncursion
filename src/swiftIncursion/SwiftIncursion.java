@@ -22,6 +22,7 @@ public class SwiftIncursion extends StateBasedGame{
 		app.setDisplayMode(800, 600, false);
 		app.setTargetFrameRate(60);
 		app.start();
+		
 	}
 
 	@Override

@@ -1,5 +1,8 @@
 package swiftIncursion;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import org.newdawn.slick.GameContainer;
@@ -17,8 +20,6 @@ public class GamePlayState extends BasicGameState {
 	private Level level;
 	private int stateId;
 	private Player player;
-	private Vector2f playerPos;
-	private int playerSpeed;
 	private CollidableShapeObject base;
 	private CollisionManager cm;
 	private CollidableShapeObject winBox;
@@ -39,10 +40,8 @@ public class GamePlayState extends BasicGameState {
 		
 		player = new Player("Player", new Rectangle(100, 100, 25, 25), 3, level, 1);
 		base = new Platform("Base", new Rectangle(0, container.getHeight() - 10, container.getWidth() + 1, 10), 2);
-		winBox = new Box("Win Box", new Rectangle(430, 50, 50, 50), 3);
 		wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
 		dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);
-		playerSpeed = 6;
 	}
 
 	@Override
@@ -50,10 +49,12 @@ public class GamePlayState extends BasicGameState {
 		
 		player.render(g);
 		base.render(g);
-		winBox.render(g);
 		wall.render(g);
 		for(Platform p: level.getPlatforms()){
 			p.render(g);
+		}
+		for(Box b: level.getBoxes()){
+		    b.render(g);
 		}
 		if(!bullets.isEmpty()){
 			for(Bullet b: bullets)
@@ -86,15 +87,24 @@ public class GamePlayState extends BasicGameState {
 	}
 	
 	public void enter(GameContainer container, StateBasedGame game)throws SlickException{
+	    try
+        {
+            level.loadLevel(new FileInputStream(new File("Data/level1.txt")));
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
 		container.getInput().addKeyListener(player);
 		cm = new CollisionManager();
 		cm.addCollidable(player);
 		cm.addCollidable(base);
-		cm.addCollidable(winBox);
 		cm.addCollidable(dummyBullet);
 		cm.addCollidable(wall);
 		for(Platform p: level.getPlatforms()){
 			cm.addCollidable(p);
+		}
+		for(Box b: level.getBoxes()){
+		    cm.addCollidable(b);
 		}
 		cm.addHandler(new PlayerAndPlatformCollisionHandler(cm, level, player));
 		cm.addHandler(new PlayerAndWinBoxCollisionManager(level));

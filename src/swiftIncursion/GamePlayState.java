@@ -38,10 +38,10 @@ public class GamePlayState extends BasicGameState {
 	public void init(GameContainer container, StateBasedGame game)throws SlickException {
 		
 		
-		player = new Player("Player", new Rectangle(100, 100, 25, 25), 3, level, 1);
+		/*player = new Player("Player", new Rectangle(100, 100, 25, 25), 3, level, 1);
 		base = new Platform("Base", new Rectangle(0, container.getHeight() - 10, container.getWidth() + 1, 10), 2);
 		wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
-		dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);
+		dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);*/
 	}
 
 	@Override
@@ -83,16 +83,26 @@ public class GamePlayState extends BasicGameState {
 			}
 		}
 		cm.processCollisions();
-		if(level.getPlayerHitWinBox()) game.enterState(2);
+		if(level.getPlayerHitWinBox()){
+		    level.setPlayerHitWinBox(false);
+		    GameInfo.getCurrentGameInfo().nextLevel();
+		    level.removeGameObjects();
+		    game.enterState(1);
+		}
 	}
 	
 	public void enter(GameContainer container, StateBasedGame game)throws SlickException{
+	    player = new Player("Player", new Rectangle(100, 100, 25, 25), 3, level, 1);
+        base = new Platform("Base", new Rectangle(0, container.getHeight() - 10, container.getWidth() + 1, 10), 2);
+        wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
+        dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);
 	    try
         {
-            level.loadLevel(new FileInputStream(new File("Data/level1.txt")));
+            level.loadLevel(new FileInputStream(new File("Data/level"+ GameInfo.getCurrentGameInfo().getLevelID() +".txt")));
         } catch (FileNotFoundException e)
         {
-            e.printStackTrace();
+            System.out.println("No level to load");
+            game.enterState(2);
         }
 		container.getInput().addKeyListener(player);
 		cm = new CollisionManager();

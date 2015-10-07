@@ -33,6 +33,11 @@ public class Level {
 	    boxes.add(b);
 	}
 	
+	public void removeGameObjects(){
+	    platforms.clear();
+	    boxes.clear();
+	}
+	
 	public ArrayList<Platform> getPlatforms(){
 		return platforms;
 	}

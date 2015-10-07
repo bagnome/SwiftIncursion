@@ -24,7 +24,7 @@ public class WinState extends BasicGameState{
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g)
 			throws SlickException {
-		g.drawString("You Won", 100, 100);
+		g.drawString("No more levels", 100, 100);
 	}
 
 	@Override

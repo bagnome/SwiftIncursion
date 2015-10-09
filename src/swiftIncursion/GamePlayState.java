@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Circle;
@@ -25,6 +26,7 @@ public class GamePlayState extends BasicGameState {
 	private CollidableShapeObject winBox;
 	private CollidableShapeObject wall;
 	private Bullet dummyBullet;
+	private ImagePlatform dummyImage;
 	private ArrayList<Bullet> bullets;
 	
 	
@@ -50,7 +52,7 @@ public class GamePlayState extends BasicGameState {
 		player.render(g);
 		base.render(g);
 		wall.render(g);
-		for(Platform p: level.getPlatforms()){
+		for(CollidableObject p: level.getPlatforms()){
 			p.render(g);
 		}
 		for(Box b: level.getBoxes()){
@@ -89,6 +91,7 @@ public class GamePlayState extends BasicGameState {
 		    level.removeGameObjects();
 		    game.enterState(1);
 		}
+
 	}
 	
 	public void enter(GameContainer container, StateBasedGame game)throws SlickException{
@@ -96,6 +99,7 @@ public class GamePlayState extends BasicGameState {
         base = new Platform("Base", new Rectangle(0, container.getHeight() - 10, container.getWidth() + 1, 10), 2);
         wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
         dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);
+        dummyImage = new ImagePlatform("", new Image("Data/GrassPlatform.png"),new Rectangle(-0,-50,0,0),6);
 	    try
         {
             level.loadLevel(new FileInputStream(new File("Data/level"+ GameInfo.getCurrentGameInfo().getLevelID() +".txt")));
@@ -109,14 +113,16 @@ public class GamePlayState extends BasicGameState {
 		cm.addCollidable(player);
 		cm.addCollidable(base);
 		cm.addCollidable(dummyBullet);
+		cm.addCollidable(dummyImage);
 		cm.addCollidable(wall);
-		for(Platform p: level.getPlatforms()){
+		for(CollidableObject p: level.getPlatforms()){
 			cm.addCollidable(p);
 		}
 		for(Box b: level.getBoxes()){
 		    cm.addCollidable(b);
 		}
 		cm.addHandler(new PlayerAndPlatformCollisionHandler(cm, level, player));
+	    cm.addHandler(new PlayerAndImagePlatformCollisionHandler(cm, level, player));
 		cm.addHandler(new PlayerAndWinBoxCollisionManager(level));
 		cm.addHandler(new WallAndBulletCollisionHandler(cm, level));
 	}

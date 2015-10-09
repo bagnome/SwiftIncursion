@@ -6,19 +6,21 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.opengl.Texture;
 
 public class Level {
 	
-	private ArrayList<Platform> platforms;
+	private ArrayList<CollidableObject> platforms;
 	private ArrayList<Box> boxes;
 	private boolean playerCollidingWithPlatform;
 	private boolean hitWinBox;
 	private boolean bulletCollision;
 	
 	public Level(){
-		platforms = new ArrayList<Platform>();
+		platforms = new ArrayList<CollidableObject>();
 		boxes = new ArrayList<Box>();
 		playerCollidingWithPlatform = false;
 		hitWinBox = false;
@@ -33,12 +35,16 @@ public class Level {
 	    boxes.add(b);
 	}
 	
+	private void addImagePlatforms(ImagePlatform i){
+	    platforms.add(i);
+	}
+	
 	public void removeGameObjects(){
 	    platforms.clear();
 	    boxes.clear();
 	}
 	
-	public ArrayList<Platform> getPlatforms(){
+	public ArrayList<CollidableObject> getPlatforms(){
 		return platforms;
 	}
 	
@@ -95,6 +101,16 @@ public class Level {
                             Integer.parseInt(coords[2]), 
                             Integer.parseInt(coords[3])), 
                             Integer.parseInt(args[4])));
+	            }
+	        }else if(args[0].equals("IMAGE")){
+	            String[] coords = args[4].split(",");
+	            if(args[1].equals("IMAGEPLATFORM")){
+	                addImagePlatforms(new ImagePlatform(args[2], new Image(args[3]),new Rectangle(
+	                        Integer.parseInt(coords[0]),
+	                        Integer.parseInt(coords[1]),
+	                        Integer.parseInt(coords[2]),
+	                        Integer.parseInt(coords[3])),
+	                        Integer.parseInt(args[5])));
 	            }
 	        }
 	        System.out.println();

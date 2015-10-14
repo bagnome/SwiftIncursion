@@ -1,0 +1,16 @@
+#Test
+
+#leftBumper|IMAGE;data/leftbumper.png|-10,0|1;RECTANGLE;10,0,20,600
+
+#moreTesting|evanMoreTesting|keepGoing|yourGood|yourGood|keepGoing
+#Squidward smells good
+#Remove spaces between numbers.
+
+SHAPE|PLATFORM|Platform 1|500,450,200,10|2
+SHAPE|PLATFORM|Platform 2|190,100,200,10|2
+SHAPE|PLATFORM|Platform 3|0,200,100,10|2
+SHAPE|PLATFORM|Platform 4|430,500,50,10|2
+SHAPE|PLATFORM|Platform 5|400,350,100,10|2
+SHAPE|PLATFORM|Platform 6|180,275,200,10|2
+SHAPE|BOX|Win Box|430,300,50,50|3
+IMAGE|IMAGEPLATFORM|Img Platform 1|Data/GrassPlatform.png|50,490,200,30|6

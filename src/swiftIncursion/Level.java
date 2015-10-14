@@ -15,16 +15,22 @@ public class Level {
 	
 	private ArrayList<CollidableObject> platforms;
 	private ArrayList<Box> boxes;
+	private ArrayList<Enemy> enemies;
 	private boolean playerCollidingWithPlatform;
 	private boolean hitWinBox;
 	private boolean bulletCollision;
+	private boolean enemyBulletCollision;
+	private Level level;
 	
 	public Level(){
 		platforms = new ArrayList<CollidableObject>();
 		boxes = new ArrayList<Box>();
+		enemies = new ArrayList<Enemy>();
 		playerCollidingWithPlatform = false;
 		hitWinBox = false;
 		bulletCollision = false;
+		enemyBulletCollision = false;
+		this.level = this;
 	}
 	
 	private void addPlatforms(Platform p){
@@ -35,6 +41,10 @@ public class Level {
 	    boxes.add(b);
 	}
 	
+	private void addEnemy(Enemy e){
+	    enemies.add(e);
+	}
+	
 	private void addImagePlatforms(ImagePlatform i){
 	    platforms.add(i);
 	}
@@ -42,6 +52,7 @@ public class Level {
 	public void removeGameObjects(){
 	    platforms.clear();
 	    boxes.clear();
+	    enemies.clear();
 	}
 	
 	public ArrayList<CollidableObject> getPlatforms(){
@@ -52,8 +63,16 @@ public class Level {
 	    return boxes;
 	}
 	
+	public ArrayList<Enemy> getEnemies(){
+	    return enemies;
+	}
+	
 	public void setplayerCollidingWithPlatform(boolean b){
 		playerCollidingWithPlatform = b;
+	}
+	
+	public void setBulletCollisionWithEnemy(boolean b){
+	    enemyBulletCollision = b;
 	}
 	
 	public boolean getplayerCollidingWithPlatform(){
@@ -70,6 +89,10 @@ public class Level {
 	
 	public boolean bulletCollision(){
 		return bulletCollision;
+	}
+	
+	public boolean getBulletCollisionWithEnemy(){
+	    return enemyBulletCollision;
 	}
 	
 	public void setBulletCollsion(boolean bulletCollision){
@@ -100,6 +123,14 @@ public class Level {
                             Integer.parseInt(coords[1]), 
                             Integer.parseInt(coords[2]), 
                             Integer.parseInt(coords[3])), 
+                            Integer.parseInt(args[4])));
+	            }else if(args[1].equals("ENEMY")){
+	                addEnemy(new Enemy(args[2], new Rectangle(
+	                        Integer.parseInt(coords[0]), 
+                            Integer.parseInt(coords[1]), 
+                            Integer.parseInt(coords[2]), 
+                            Integer.parseInt(coords[3])),
+                            0, level,
                             Integer.parseInt(args[4])));
 	            }
 	        }else if(args[0].equals("IMAGE")){

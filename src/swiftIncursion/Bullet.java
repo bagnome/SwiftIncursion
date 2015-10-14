@@ -1,5 +1,6 @@
 package swiftIncursion;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 
@@ -32,6 +33,11 @@ public class Bullet extends CollidableShapeObject{
 	
 	public void setVelocity(int vel){
 		velocity = vel;
+	}
+	
+	public boolean isOnScreen(GameContainer container){
+	    if(shape.getLocation().x < 0 || shape.getLocation().x > container.getWidth()) return false;
+	    return true;
 	}
 
 }

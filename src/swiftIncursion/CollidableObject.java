@@ -6,7 +6,7 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class CollidableObject implements ICollidableObject
 {
-    private String name;
+    protected String name;
     protected Shape shape;
     private int collisionType;
     protected int xVel;
@@ -29,7 +29,7 @@ public class CollidableObject implements ICollidableObject
         shape.setLocation(pos);
     }
     
-    public void moveShape(){
+    public void move(float xVel, float yVel){
         Vector2f pos = shape.getLocation();
         float y = pos.y;
         float x = pos.x;
@@ -71,9 +71,9 @@ public class CollidableObject implements ICollidableObject
     }
     
     public void render(Graphics g){
-        Vector2f pos = shape.getLocation();
+        
         g.draw(shape);
-        g.drawString(name, pos.x, pos.y-20);
+        
     }
     
     @Override

@@ -1,5 +1,6 @@
 package swiftIncursion;
 
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
 import org.newdawn.slick.geom.*;
@@ -30,6 +31,12 @@ public class Player extends People implements KeyListener{
 		shape.setLocation(x, y);
 		level.setplayerCollidingWithPlatform(false);
 	}
+	
+	public void render(Graphics g){
+        Vector2f pos = shape.getLocation();
+        g.draw(shape);
+        g.drawString(name, pos.x, pos.y-20);
+    }
 
 	@Override
 	public void inputEnded() {
@@ -58,14 +65,14 @@ public class Player extends People implements KeyListener{
 	@Override
 	public void keyPressed(int numKey, char key) {
 		switch(key){
-		case 'd':
+		/*case 'd':
 			xVel = speed;
 			break;
 		case 'a':
 			xVel = -speed;
-			break;
+			break;*/
 		case ' ':
-			if(yVel == 0)yVel = -15;
+			if(yVel == 0)yVel = -25;
 		}
 		
 		

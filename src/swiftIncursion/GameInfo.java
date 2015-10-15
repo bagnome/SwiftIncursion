@@ -4,6 +4,8 @@ public class GameInfo
 {
     private static GameInfo _instance = null;
     private int levelID;
+    private int lives;
+    private boolean playerExists;
     
     public static GameInfo getCurrentGameInfo(){
         return _instance;
@@ -15,7 +17,9 @@ public class GameInfo
     }
     
     private GameInfo(){
+        lives = 3;
         levelID = 1;
+        playerExists = false;
     }
     
     public void nextLevel(){
@@ -25,6 +29,22 @@ public class GameInfo
     
     public int getLevelID(){
         return levelID;
+    }
+    
+    public int getLives(){
+        return lives;
+    }
+    
+    public void removeLife(){
+        lives--;
+    }
+    
+    public boolean getPlayerExists(){
+        return playerExists;
+    }
+    
+    public void setPlayerExists(boolean p){
+        playerExists = p;
     }
 
 }

@@ -73,7 +73,9 @@ public class CollisionManager {
 					List<ICollidableObject> collidableForType = collidables.get(type);
 					List<ICollidableObject> collidableForCollidingType = collidables.get(collidingType);
 					for (ICollidableObject collidable : collidableForType) {
+					    
 						for (ICollidableObject collidesWith : collidableForCollidingType) {
+						   
 							if(collidable.isCollidingWith(collidesWith)){
 								CollisionData cd = new CollisionData();
 								cd.handler = collisionHandlers.get(getKey(type, collidingType));
@@ -82,9 +84,10 @@ public class CollisionManager {
 								
 								collisions.add(cd);
 							}
-
 						}
+					    
 					}
+					    
 				}
 				allCollisionKeys.add(getKey(type, collidingType));
 			}

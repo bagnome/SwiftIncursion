@@ -10,7 +10,7 @@ public class CollidableObject implements ICollidableObject
     protected Shape shape;
     private int collisionType;
     protected int xVel;
-    protected int yVel;
+    protected float yVel;
     private static enum DIRECTION {
         LEFT, RIGHT, UP, DOWN
     };
@@ -46,7 +46,7 @@ public class CollidableObject implements ICollidableObject
         xVel = x;
     }
     
-    public int getYVel(){
+    public float getYVel(){
         return yVel;
     }
     

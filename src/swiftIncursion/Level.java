@@ -21,6 +21,7 @@ public class Level {
 	private boolean bulletCollision;
 	private boolean enemyBulletCollision;
 	private Level level;
+    private boolean enemyCollidingWithPlatform;
 	
 	public Level(){
 		platforms = new ArrayList<CollidableObject>();
@@ -130,7 +131,7 @@ public class Level {
                             Integer.parseInt(coords[1]), 
                             Integer.parseInt(coords[2]), 
                             Integer.parseInt(coords[3])),
-                            0, level,
+                            3, level,
                             Integer.parseInt(args[4])));
 	            }
 	        }else if(args[0].equals("IMAGE")){
@@ -174,5 +175,9 @@ public class Level {
         }
         return args;
     }
+
+    
+
+    
 
 }

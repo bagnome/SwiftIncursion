@@ -6,7 +6,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
- * @version 0.0.3
+ * @version 0.0.5
  */
 public class SwiftIncursion extends StateBasedGame{
 
@@ -15,7 +15,7 @@ public class SwiftIncursion extends StateBasedGame{
 	public final static int WINSTATE = 2;
 	
 	public SwiftIncursion() {
-		super("Some Title");
+		super("Swift Incursion");
 		
 	}
 	

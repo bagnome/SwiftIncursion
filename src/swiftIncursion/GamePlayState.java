@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -16,10 +17,13 @@ import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import swiftIncursion.Bullet.Facing;
+import swiftIncursion.People.DIRECTION_FACING;
+
 public class GamePlayState extends BasicGameState {
 
 	private static final int PLAYERSPEED = 5;
-	private static final int BULLETSPEED = 5;
+	private static int BULLETSPEED = 15;
 	private int stateId;
 	private Level level;
 	private Player player;
@@ -27,11 +31,15 @@ public class GamePlayState extends BasicGameState {
 	private CollisionManager cm;
 	private CollidableShapeObject winBox;
 	//private CollidableShapeObject wall;
+	private Enemy dummyEnemy;
 	private Bullet dummyBullet;
 	private ImagePlatform dummyImage;
 	private Box dummyBox;
 	private ArrayList<Bullet> bullets;
-	
+	private int shotDelay = 60;
+	private int shot = shotDelay;
+	private DIRECTION_FACING crouchFacing = DIRECTION_FACING.RIGHT;
+    
 	
 	public GamePlayState(int id) {
 		stateId = id;
@@ -41,12 +49,15 @@ public class GamePlayState extends BasicGameState {
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)throws SlickException {
+
+	    player = new Player("Player", new Rectangle(300, 400, 75, 150), 3, level, 1);
+	    base = new Platform("Base", new Rectangle(-2500, container.getHeight() - 10, 5000, 10), 2);
+        //wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
+        dummyBox = new Box("", new Rectangle(-1,-2,1,1),3);
+        dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5, Facing.RIGHT);
+        dummyImage = new ImagePlatform("", new Image("Data/GrassPlatform.png"),new Rectangle(-0,-50,0,0),6);
+		dummyEnemy = new Enemy("", new Rectangle(1,-10,1,1),0, level, 7);
 		
-		
-		/*player = new Player("Player", new Rectangle(100, 100, 25, 25), 3, level, 1);
-		base = new Platform("Base", new Rectangle(0, container.getHeight() - 10, container.getWidth() + 1, 10), 2);
-		wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
-		dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);*/
 	}
 
 	@Override
@@ -67,6 +78,7 @@ public class GamePlayState extends BasicGameState {
 			for(Bullet b: bullets)
 				b.render(g);
 		}
+		g.drawString("Health: "+GameInfo.getCurrentGameInfo().getLives(), 85, 10);
 	}
 
 	@Override
@@ -74,26 +86,68 @@ public class GamePlayState extends BasicGameState {
 
 		//Input
 		Input input = container.getInput(); 
-		if(container.getInput().isKeyPressed(input.KEY_F)){
-			Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x + player.getWidth(), 
+
+		if(container.getInput().isKeyDown(input.KEY_F) && shot >= shotDelay){
+			if (player.getDirectionFacing() == DIRECTION_FACING.RIGHT)
+			{
+					Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x + player.getWidth(), 
 			        player.getPos().y + player.getHeight()/4, 
-			        5), 3, cm, 5);
-			bullets.add(bul);
-			cm.addCollidable(bul);
+			        5), BULLETSPEED, cm, 5, Facing.RIGHT);
+					bullets.add(bul);
+					cm.addCollidable(bul);
+			}
+			else if (player.getDirectionFacing() == DIRECTION_FACING.LEFT)
+			{
+					Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x, 
+			        player.getPos().y + player.getHeight()/4, 
+			        5), -BULLETSPEED, cm, 5, Facing.LEFT);
+					bullets.add(bul);
+					cm.addCollidable(bul);
+			}
+			shot = 0;
 		}
-		int newBulletSpeed;
-		if(container.getInput().isKeyDown(input.KEY_D)){
-		    for(CollidableObject c: level.getPlatforms()){
-	            c.move(-PLAYERSPEED, 0);
-	        }
-		    for(Box b: level.getBoxes()){
+		if (shot < shotDelay)
+		{
+			shot++;
+		}
+		int newBulletSpeed = 0;
+		int playerBulletSpeed;
+		if(container.getInput().isKeyPressed(input.KEY_DOWN) && player.isGrounded()){
+			player.setShape(150, 75);
+			player.setCrouching(true);
+			crouchFacing = player.getDirectionFacing();
+			Vector2f adjust = new Vector2f(player.getPos().x, player.getPos().y+75);
+			
+			if(crouchFacing == DIRECTION_FACING.LEFT){
+				adjust.x -= 75;
+			}
+			player.setPos(adjust);
+		}
+		else if(!container.getInput().isKeyDown(input.KEY_DOWN) && player.getWidth() == 150)
+		{
+			player.setShape(75, 150);
+			player.setCrouching(false);
+			Vector2f adjust = new Vector2f(player.getPos().x, player.getPos().y-75);
+			
+			if(crouchFacing == DIRECTION_FACING.LEFT){
+				adjust.x += 75;
+			}
+			player.setPos(adjust);
+		}
+		if(container.getInput().isKeyDown(input.KEY_RIGHT)){
+				for(CollidableObject c: level.getPlatforms()){
+				c.move(-PLAYERSPEED, 0);
+				}
+				for(Box b: level.getBoxes()){
 	            b.move(-PLAYERSPEED, 0);
-	        }
-		    for(Enemy e: level.getEnemies()){
+				}
+				for(Enemy e: level.getEnemies()){
                 e.move(-PLAYERSPEED, 0);
-            }
-		    newBulletSpeed = PLAYERSPEED - BULLETSPEED;
-		}else if(container.getInput().isKeyDown(input.KEY_A)){
+				}
+				player.setDirectionFacing(DIRECTION_FACING.RIGHT);
+				playerBulletSpeed = PLAYERSPEED;
+		    
+		}else if(container.getInput().isKeyDown(input.KEY_LEFT)){
 		    for(CollidableObject c: level.getPlatforms()){
 	            c.move(PLAYERSPEED, 0);
 	        }
@@ -103,18 +157,38 @@ public class GamePlayState extends BasicGameState {
 		    for(Enemy e: level.getEnemies()){
 		        e.move(PLAYERSPEED, 0);
 		    }
-		    newBulletSpeed = PLAYERSPEED + BULLETSPEED;
+		    player.setDirectionFacing(DIRECTION_FACING.LEFT);
+		    playerBulletSpeed = -PLAYERSPEED;
 		}else{
-		    newBulletSpeed = BULLETSPEED;
+			playerBulletSpeed = 0;
 		}
 		
 		//Move player
 		player.move();
 		
+		//Move enemies
+		for(Enemy e: level.getEnemies()){
+		
+		    if(e.getPos().x - player.getPos().x > 280 + e.getOffSet())
+		    e.move(-3);
+		    else if(e.getPos().x - player.getPos().x < -130 - e.getOffSet())
+		        e.move(3);
+		    e.moveY();
+		}
+		
+		
 		//move bullet
 		if(!bullets.isEmpty()){
 			for(int i = 0; i < bullets.size(); i++){
-			    bullets.get(i).setVelocity(newBulletSpeed);
+				if (bullets.get(i).getFacing() == Facing.RIGHT)
+				{
+					newBulletSpeed = BULLETSPEED - playerBulletSpeed;
+				}
+				else if (bullets.get(i).getFacing() == Facing.LEFT)
+				{
+					newBulletSpeed = -BULLETSPEED - playerBulletSpeed;
+				}
+				bullets.get(i).setVelocity(newBulletSpeed);
 				bullets.get(i).move();
 				if(level.bulletCollision() ){
                     cm.removeCollidable(bullets.get(i));
@@ -142,12 +216,13 @@ public class GamePlayState extends BasicGameState {
 	}
 	
 	public void enter(GameContainer container, StateBasedGame game)throws SlickException{
-	    player = new Player("Player", new Rectangle(200, 430, 75, 150), 3, level, 1);
-        base = new Platform("Base", new Rectangle(0, container.getHeight() - 10, container.getWidth() + 1, 10), 2);
-        //wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
-        dummyBox = new Box("", new Rectangle(-1,-2,1,1),3);
-        dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5);
-        dummyImage = new ImagePlatform("", new Image("Data/GrassPlatform.png"),new Rectangle(-0,-50,0,0),6);
+	    cm = new CollisionManager();
+	    if(!GameInfo.getCurrentGameInfo().getPlayerExists()){
+	        
+	        
+	        GameInfo.getCurrentGameInfo().setPlayerExists(true);
+	    }
+        
 	    try
         {
             level.loadLevel(new FileInputStream(new File("Data/level"+ GameInfo.getCurrentGameInfo().getLevelID() +".txt")));
@@ -157,12 +232,12 @@ public class GamePlayState extends BasicGameState {
             game.enterState(2);
         }
 		container.getInput().addKeyListener(player);
-		cm = new CollisionManager();
 		cm.addCollidable(player);
 		cm.addCollidable(base);
 		cm.addCollidable(dummyBullet);
 		cm.addCollidable(dummyImage);
 		cm.addCollidable(dummyBox);
+		cm.addCollidable(dummyEnemy);
 		//cm.addCollidable(wall);
 		for(CollidableObject p: level.getPlatforms()){
 			cm.addCollidable(p);
@@ -170,9 +245,14 @@ public class GamePlayState extends BasicGameState {
 		for(Box b: level.getBoxes()){
 		    cm.addCollidable(b);
 		}
+		for(Enemy e: level.getEnemies()){
+		    cm.addCollidable(e);
+		}
 		cm.addHandler(new PlayerAndPlatformCollisionHandler(cm, level, player));
 	    cm.addHandler(new PlayerAndImagePlatformCollisionHandler(cm, level, player));
 		cm.addHandler(new PlayerAndWinBoxCollisionManager(level));
+		cm.addHandler(new EnemyAndBulletCollisionHandler(cm, level, bullets));
+		cm.addHandler(new EnemyAndPlatformCollisionHandler(level));
 		//cm.addHandler(new WallAndBulletCollisionHandler(cm, level));
 	}
 

@@ -4,92 +4,121 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
 import org.newdawn.slick.geom.*;
+import org.newdawn.slick.geom.Rectangle;
 
-public class Player extends People implements KeyListener{
+public class Player extends People implements KeyListener {
 	
 	private int speed;
 	private Level level;
-	
-	
-	public Player(String name, Shape shape, int speed, Level level, int collisionType){
-		super (name, shape, collisionType, level, collisionType);
+	private Rectangle rectangle;
+	private static final float GRAVITY = 1f;
+	private static boolean GROUNDED = true;
+	private boolean CROUCHED = false;
+		
+	public Player(String name, Rectangle rectangle, int speed, Level level, int collisionType){
+		super (name, rectangle, collisionType, level, collisionType);
+		this.rectangle = rectangle;
 		this.speed = speed;
-		yVel = 1;
+		yVel = 1f;
 		this.level = level;
 	}
 	
-	public void move(){
-		Vector2f pos = shape.getLocation();
-		if(yVel < 10)yVel+=1;
-		if(level.getplayerCollidingWithPlatform() && yVel > 0)yVel = 0;
-		float y = pos.y;
-		float x = pos.x;
-		if(xVel < 0)facing = DIRECTION_FACING.LEFT;
-		else facing = DIRECTION_FACING.RIGHT;
-		y+=yVel;
-		x+=xVel;
-		shape.setLocation(x, y);
-		level.setplayerCollidingWithPlatform(false);
+	public void setShape(float x, float y){
+		rectangle.setWidth(x);
+		rectangle.setHeight(y);
 	}
-	
-	public void render(Graphics g){
-        Vector2f pos = shape.getLocation();
-        g.draw(shape);
-        g.drawString(name, pos.x, pos.y-20);
-    }
 
-	@Override
-	public void inputEnded() {
-		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public void inputStarted() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isAcceptingInput() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public void setInput(Input arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyPressed(int numKey, char key) {
-		switch(key){
-		/*case 'd':
-			xVel = speed;
-			break;
-		case 'a':
-			xVel = -speed;
-			break;*/
-		case ' ':
-			if(yVel == 0)yVel = -25;
+		public void move(){
+			if (yVel > 0)
+			{
+				GROUNDED = false;
+			}
+			Vector2f pos = shape.getLocation();
+			yVel += GRAVITY;
+			
+			if(level.getplayerCollidingWithPlatform())
+			{
+				if (yVel < 0)
+				{
+					float adjustY = yVel - 1;
+					yVel = 0;
+					shape.setLocation(pos.x,pos.y-adjustY);
+					pos = shape.getLocation();
+				}
+				if (yVel > 0)
+				{
+					GROUNDED = true;
+					yVel = 0;
+				}
+			}
+			float y = pos.y;
+			float x = pos.x;
+			y+=yVel;
+			x+=xVel;
+			shape.setLocation(x, y);
+			level.setplayerCollidingWithPlatform(false);
 		}
 		
-		
-	}
-
-	@Override
-	public void keyReleased(int arg0, char key) {
-		switch(key){
-		case 'd':
-			xVel = 0;
-			break;
-		case 'a':
-			xVel = 0;
-			break;
+		public void setCrouching(boolean t){
+			CROUCHED = t;
 		}
+		public boolean isGrounded(){
+			return GROUNDED;
+		}
+		@Override
+		public void inputEnded() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void inputStarted() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public boolean isAcceptingInput() {
+			// TODO Auto-generated method stub
+			return true;
+		}
+
+		@Override
+		public void setInput(Input arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyPressed(int numKey, char key) {
+		    
+			switch(numKey){
+			case 57:
+			    System.out.println(GROUNDED + " " + yVel + " " + CROUCHED);
+				if(GROUNDED &&yVel >= 0f && !CROUCHED)
+				{
+					yVel = -15f;
+					System.out.println(yVel);
+					GROUNDED = false;
+					level.setplayerCollidingWithPlatform(false);
+
+				}
+				break;
+			}
+		}	
+			
 		
+
+		@Override
+		public void keyReleased(int arg0, char key) {
+			switch(arg0){
+			case 57:
+				if (yVel < 0f && !CROUCHED)
+				{
+					yVel = 0f;
+				}
+				break;
+			}		
+		}
 	}
-
-
-}

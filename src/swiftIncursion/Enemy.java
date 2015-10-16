@@ -1,10 +1,14 @@
 package swiftIncursion;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.geom.Circle;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
+
+import swiftIncursion.Bullet.Facing;
 
 public class Enemy extends People{
     
@@ -43,6 +47,14 @@ public class Enemy extends People{
         shape.setLocation(x, y);
     }
     
+    public void shoot(ArrayList<Bullet> bullets, int bulletSpeed, CollisionManager cm)
+    {
+        bullets.add(new Bullet("Bullet", new Circle(this.getPos().x + this.getWidth(), 
+                    this.getPos().y + this.getHeight()/4, 
+                    5), bulletSpeed, cm, 8, Facing.RIGHT));
+        
+    }
+    
     public void moveY(){
         if (yVel > 0)
         {
@@ -76,5 +88,7 @@ public class Enemy extends People{
     public int getOffSet(){
         return offSetFromPlayer;
     }
+
+    
 
 }

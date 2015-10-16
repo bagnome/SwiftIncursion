@@ -39,12 +39,15 @@ public class GamePlayState extends BasicGameState {
 	private int shotDelay = 60;
 	private int shot = shotDelay;
 	private DIRECTION_FACING crouchFacing = DIRECTION_FACING.RIGHT;
+	private int enemyShot;
+    private Bullet dummyBullet2;
     
 	
 	public GamePlayState(int id) {
 		stateId = id;
 		level = new Level();
 		bullets = new ArrayList<Bullet>();
+		enemyShot = 0;
 	}
 
 	@Override
@@ -55,6 +58,7 @@ public class GamePlayState extends BasicGameState {
         //wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
         dummyBox = new Box("", new Rectangle(-1,-2,1,1),3);
         dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5, Facing.RIGHT);
+        dummyBullet2 = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 8, Facing.RIGHT);
         dummyImage = new ImagePlatform("", new Image("Data/GrassPlatform.png"),new Rectangle(-0,-50,0,0),6);
 		dummyEnemy = new Enemy("", new Rectangle(1,-10,1,1),0, level, 7);
 		
@@ -168,13 +172,46 @@ public class GamePlayState extends BasicGameState {
 		
 		//Move enemies
 		for(Enemy e: level.getEnemies()){
-		
-		    if(e.getPos().x - player.getPos().x > 280 + e.getOffSet())
-		    e.move(-3);
-		    else if(e.getPos().x - player.getPos().x < -130 - e.getOffSet())
+		    Random r = new Random();
+		    if(e.getPos().x - player.getPos().x > 280 + e.getOffSet()){
+		        e.move(-3);
+		        e.setDirectionFacing(DIRECTION_FACING.LEFT);
+		        
+		    }
+		    else if(e.getPos().x - player.getPos().x < -130 - e.getOffSet()){
 		        e.move(3);
+		        e.setDirectionFacing(DIRECTION_FACING.RIGHT);      
+		    }
+		    
+		    if(e.getDirectionFacing() == DIRECTION_FACING.LEFT){
+		        if(enemyShot >= shotDelay && r.nextInt(10) == 1){
+		            
+		            Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(), 
+	                        e.getPos().y + e.getHeight()/4, 
+	                        5), BULLETSPEED, cm, 8, Facing.LEFT);
+		            
+		            bullets.add(bul);
+		            cm.addCollidable(bul);
+		            enemyShot = 0;
+		        }
+		    }else if(e.getDirectionFacing() == DIRECTION_FACING.RIGHT){
+		        if(enemyShot >= shotDelay && r.nextInt(10) == 1){
+		            
+		            Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(),
+	                        e.getPos().y + e.getHeight()/4, 
+	                        5), BULLETSPEED, cm, 8, Facing.RIGHT);
+		            
+		            bullets.add(bul);
+		            cm.addCollidable(bul);
+		            enemyShot = 0;
+		        }
+		    }
 		    e.moveY();
+		    enemyShot++;
 		}
+		
+		//Enemy shoot
+		
 		
 		
 		//move bullet
@@ -235,6 +272,7 @@ public class GamePlayState extends BasicGameState {
 		cm.addCollidable(player);
 		cm.addCollidable(base);
 		cm.addCollidable(dummyBullet);
+		cm.addCollidable(dummyBullet2);
 		cm.addCollidable(dummyImage);
 		cm.addCollidable(dummyBox);
 		cm.addCollidable(dummyEnemy);
@@ -253,6 +291,7 @@ public class GamePlayState extends BasicGameState {
 		cm.addHandler(new PlayerAndWinBoxCollisionManager(level));
 		cm.addHandler(new EnemyAndBulletCollisionHandler(cm, level, bullets));
 		cm.addHandler(new EnemyAndPlatformCollisionHandler(level));
+		cm.addHandler(new PlayerAndBulletCollisionHandler(cm, bullets));
 		//cm.addHandler(new WallAndBulletCollisionHandler(cm, level));
 	}
 

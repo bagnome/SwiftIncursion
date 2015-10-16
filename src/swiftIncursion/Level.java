@@ -36,6 +36,8 @@ public class Level {
 	
 	private void addPlatforms(Platform p){
 		platforms.add(p);
+		platforms.add(p.getLeftEnd());
+		platforms.add(p.getRightEnd());
 	}
 	
 	private void addBoxes(Box b){

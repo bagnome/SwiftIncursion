@@ -10,9 +10,9 @@ public class Platform extends CollidableShapeObject{
 	Platform(String name, Shape shape, int collisionType) {
 		super(name, shape, collisionType);
 		leftEnd = new CollidableShapeObject
-		        ("Left End", new Rectangle(this.getPos().x-6, this.getPos().y,6,this.getHeight()), 9);
+		        ("Left End", new Rectangle(this.getPos().x-6, this.getPos().y,6,this.getHeight()), 10);
 		rightEnd = new CollidableShapeObject
-		        ("Right End", new Rectangle(this.getPos().x+this.getWidth()+6, this.getPos().y,6,this.getHeight()), 9);
+		        ("Right End", new Rectangle(this.getPos().x+this.getWidth(), this.getPos().y,6,this.getHeight()), 9);
 		
 	}
 	

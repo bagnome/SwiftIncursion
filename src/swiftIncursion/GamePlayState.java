@@ -41,6 +41,8 @@ public class GamePlayState extends BasicGameState {
 	private DIRECTION_FACING crouchFacing = DIRECTION_FACING.RIGHT;
 	private int enemyShot;
     private Bullet dummyBullet2;
+    private Platform dummyLeft;
+    private Platform dummyRight;
     
 	
 	public GamePlayState(int id) {
@@ -61,6 +63,8 @@ public class GamePlayState extends BasicGameState {
         dummyBullet2 = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 8, Facing.RIGHT);
         dummyImage = new ImagePlatform("", new Image("Data/GrassPlatform.png"),new Rectangle(-0,-50,0,0),6);
 		dummyEnemy = new Enemy("", new Rectangle(1,-10,1,1),0, level, 7);
+		dummyLeft = new Platform("", new Rectangle(0, -10, 1, 1), 10);
+		dummyRight = new Platform("", new Rectangle(0, -10, 1, 1), 9);
 		
 	}
 
@@ -276,6 +280,8 @@ public class GamePlayState extends BasicGameState {
 		cm.addCollidable(dummyImage);
 		cm.addCollidable(dummyBox);
 		cm.addCollidable(dummyEnemy);
+		cm.addCollidable(dummyLeft);
+		cm.addCollidable(dummyRight);
 		//cm.addCollidable(wall);
 		for(CollidableObject p: level.getPlatforms()){
 			cm.addCollidable(p);
@@ -292,6 +298,8 @@ public class GamePlayState extends BasicGameState {
 		cm.addHandler(new EnemyAndBulletCollisionHandler(cm, level, bullets));
 		cm.addHandler(new EnemyAndPlatformCollisionHandler(level));
 		cm.addHandler(new PlayerAndBulletCollisionHandler(cm, bullets));
+		cm.addHandler(new LeftEndPlatformCollisionHandler());
+		cm.addHandler(new RightEndPlatformCollisionHandler());
 		//cm.addHandler(new WallAndBulletCollisionHandler(cm, level));
 	}
 

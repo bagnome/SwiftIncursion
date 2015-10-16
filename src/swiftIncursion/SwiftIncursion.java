@@ -6,7 +6,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
- * @version 0.0.5
+ * @version 0.5.2
  */
 public class SwiftIncursion extends StateBasedGame{
 

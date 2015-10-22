@@ -4,8 +4,9 @@ import org.newdawn.slick.SlickException;
 
 public class LeftEndPlatformCollisionHandler implements ICollisionHandler
 {
-    public LeftEndPlatformCollisionHandler(){
-        
+	private Level level;
+	public LeftEndPlatformCollisionHandler(CollisionManager manager, Level level, Player player){
+        this.level = level;
     }
 
     @Override
@@ -26,6 +27,11 @@ public class LeftEndPlatformCollisionHandler implements ICollisionHandler
     {
         Player player;
         CollidableShapeObject end;
+
+		if(!collidable1.isCollidingWith(collidable2)) {
+			level.setplayerCollidingWithLeftEdge(false);
+			return;
+		}
         
         if(collidable1 instanceof Player){
             player = (Player)collidable1;
@@ -34,8 +40,10 @@ public class LeftEndPlatformCollisionHandler implements ICollisionHandler
             player = (Player)collidable2;
             end = (CollidableShapeObject)collidable1;
         }
-        
-        System.out.println("Colliding with left end.");
+        if(player.isCollidingWith(end) && player.getPos().y + player.getHeight() > end.getPos().y)
+        {
+        	level.setplayerCollidingWithLeftEdge(true);
+        }
     }
 
 }

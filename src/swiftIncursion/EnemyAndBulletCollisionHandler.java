@@ -46,11 +46,12 @@ public class EnemyAndBulletCollisionHandler implements ICollisionHandler{
             bullet = (Bullet)collidable1;
         }
         
-        if(enemy.isCollidingWith(bullet)) {
+        enemy.subtractHealth();
+        cm.removeCollidable(bullet);
+        bullets.remove(bullet);
+        if(enemy.getHealth() <= 0) {
             cm.removeCollidable(enemy);
-            cm.removeCollidable(bullet);
             level.getEnemies().remove(enemy);
-            bullets.remove(bullet);
         }
     }
 

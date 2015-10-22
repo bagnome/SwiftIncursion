@@ -6,13 +6,14 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
- * @version 0.5.2
+ * @version 0.6.1
  */
 public class SwiftIncursion extends StateBasedGame{
 
 
 	public final static int GAMEPLAYSTATE = 1;
 	public final static int WINSTATE = 2;
+	public final static int MENUSTATE = 0;
 	
 	public SwiftIncursion() {
 		super("Swift Incursion");
@@ -30,7 +31,8 @@ public class SwiftIncursion extends StateBasedGame{
 
 	@Override
 	public void initStatesList(GameContainer arg0) throws SlickException {
-		addState(new GamePlayState(GAMEPLAYSTATE));
+	    addState(new MenuState(MENUSTATE));
+	    addState(new GamePlayState(GAMEPLAYSTATE));
 		addState(new WinState(WINSTATE));
 		GameInfo.creatNewGameInfo();
 		

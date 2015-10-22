@@ -3,12 +3,18 @@ package swiftIncursion;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.newdawn.slick.Animation;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Circle;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 
 import swiftIncursion.Bullet.Facing;
+import swiftIncursion.People.DIRECTION_FACING;
 
 public class Enemy extends People{
     
@@ -19,8 +25,16 @@ public class Enemy extends People{
     private static boolean GROUNDED = true;
     private boolean collidingWithPlatform;
     private int offSetFromPlayer;
+    private Image image;
+    private SpriteSheet mageSprites;
+    private Image[] mageImages;
+    private Animation mageAnimation;
+    protected float health;
+    protected float startingHealth;
+    
 
-    Enemy(String name, Shape shape, int speed, Level level, int collisionType)
+    Enemy(String name, Shape shape, int speed, Level level, int collisionType, 
+            int health)
     {
         super(name, shape, speed, level, collisionType);
         this.speed = speed;
@@ -28,16 +42,26 @@ public class Enemy extends People{
         collidingWithPlatform = true;
         r = new Random();
         offSetFromPlayer = r.nextInt(60);
+        
+        this.health = health;
+        
+        startingHealth = health;
+    }
+    
+ 
+    public void enemyAnimation(int i)
+    {
     }
     
     public void render(Graphics g){
-        Vector2f pos = shape.getLocation();
-        g.draw(shape);
-        g.drawString(name, pos.x, pos.y-20);
+        
+        
+        
+
     }
     
     public void move(float xVel){
-        
+        this.xVel = (int) xVel;
         Vector2f pos = shape.getLocation();
         
         float y = pos.y;
@@ -47,11 +71,20 @@ public class Enemy extends People{
         shape.setLocation(x, y);
     }
     
-    public void shoot(ArrayList<Bullet> bullets, int bulletSpeed, CollisionManager cm)
+    public void shoot(ArrayList<Bullet> bullets, int bulletSpeed, CollisionManager cm) throws SlickException
     {
-        bullets.add(new Bullet("Bullet", new Circle(this.getPos().x + this.getWidth(), 
+        Bullet bul;
+        if(getDirectionFacing() == DIRECTION_FACING.RIGHT){
+        bul = new Bullet("Bullet", new Circle(this.getPos().x + this.getWidth(), 
                     this.getPos().y + this.getHeight()/4, 
-                    5), bulletSpeed, cm, 8, Facing.RIGHT));
+                    5), bulletSpeed, cm, 8, Facing.RIGHT, new Image("Data/fire main.png"), 3);
+        }else{
+            bul = new Bullet("Bullet", new Circle(this.getPos().x + this.getWidth(), 
+                    this.getPos().y + this.getHeight()/4, 
+                    5), bulletSpeed, cm, 8, Facing.LEFT, new Image("Data/fire main.png"), 3);
+        }
+        bullets.add(bul);
+        cm.addCollidable(bul);
         
     }
     
@@ -89,6 +122,13 @@ public class Enemy extends People{
         return offSetFromPlayer;
     }
 
+    public float getHealth(){
+        return health;
+    }
     
+    public void subtractHealth(){
+        health--;
+    }
 
+    
 }

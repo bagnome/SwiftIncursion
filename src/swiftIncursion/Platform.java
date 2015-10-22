@@ -13,7 +13,6 @@ public class Platform extends CollidableShapeObject{
 		        ("Left End", new Rectangle(this.getPos().x-6, this.getPos().y,6,this.getHeight()), 10);
 		rightEnd = new CollidableShapeObject
 		        ("Right End", new Rectangle(this.getPos().x+this.getWidth(), this.getPos().y,6,this.getHeight()), 9);
-		
 	}
 	
 	public CollidableShapeObject getLeftEnd(){

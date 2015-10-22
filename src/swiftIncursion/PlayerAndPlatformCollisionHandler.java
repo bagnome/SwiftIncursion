@@ -45,9 +45,17 @@ public class PlayerAndPlatformCollisionHandler implements ICollisionHandler{
 			level.setplayerCollidingWithPlatform(true);
 			Vector2f correctY = player.getPos();
 			Vector2f platformPos = base.getPos();
-			if((correctY.y + player.getHeight()) >= platformPos.y && (correctY.y + player.getHeight()) <= (platformPos.y + base.getHeight())){
-				correctY.y = platformPos.y-player.getHeight();
-				player.setPos(correctY);
+			if (correctY.y + (player.getHeight()/2) > platformPos.y)
+			{
+				player.setPos(new Vector2f(correctY.x, platformPos.y + base.getHeight() + 0.1f));
+				player.setGrounded(false);
+				//System.out.println("Set on bottom");
+			}
+			if (correctY.y + (player.getHeight()/2) < platformPos.y)
+			{
+				player.setPos(new Vector2f(correctY.x, platformPos.y - player.getHeight()));
+				player.setGrounded(true);
+				//System.out.println("Set on top");
 			}
 		}
 		

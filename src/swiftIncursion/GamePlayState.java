@@ -43,6 +43,19 @@ public class GamePlayState extends BasicGameState {
     private Bullet dummyBullet2;
     private Platform dummyLeft;
     private Platform dummyRight;
+    private final float PLAYER_HIEHGT = 120;
+    private final float PLAYER_WIDTH = 25;
+    private Image bgStart;
+    private Image bgMid;
+    private Image bgEnd;
+    private int moveBG;
+    private int healthNum;
+    private Image health;
+    private int maxEnemies;
+    private int enemiesSpawned;
+    private Image[] levelBoss;
+    private SoundAndMusic sm;
+    
     
 	
 	public GamePlayState(int id) {
@@ -50,43 +63,95 @@ public class GamePlayState extends BasicGameState {
 		level = new Level();
 		bullets = new ArrayList<Bullet>();
 		enemyShot = 0;
+		
 	}
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game)throws SlickException {
 
-	    player = new Player("Player", new Rectangle(300, 400, 75, 150), 3, level, 1);
+	    player = new Player("Player", new Rectangle(300, 400, PLAYER_WIDTH, PLAYER_HIEHGT), 3, level, 1);
 	    base = new Platform("Base", new Rectangle(-2500, container.getHeight() - 10, 5000, 10), 2);
         //wall = new Box("Wall", new Rectangle(container.getWidth()-100, 0, 15, container.getHeight()), 3);
         dummyBox = new Box("", new Rectangle(-1,-2,1,1),3);
-        dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5, Facing.RIGHT);
-        dummyBullet2 = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 8, Facing.RIGHT);
+        dummyBullet = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 5, Facing.RIGHT, new Image("Data/fire main.png"), 3);
+        dummyBullet2 = new Bullet("", new Rectangle(-1, -1, 1, 1), 0, cm, 8, Facing.RIGHT, new Image("Data/fire main.png"), 3);
         dummyImage = new ImagePlatform("", new Image("Data/GrassPlatform.png"),new Rectangle(-0,-50,0,0),6);
-		dummyEnemy = new Enemy("", new Rectangle(1,-10,1,1),0, level, 7);
+		dummyEnemy = new Enemy("", new Rectangle(1,-10,1,1),0, level, 7, 5);
 		dummyLeft = new Platform("", new Rectangle(0, -10, 1, 1), 10);
 		dummyRight = new Platform("", new Rectangle(0, -10, 1, 1), 9);
-		
+		bgStart = new Image("Data/background 3.png");
+		bgMid = new Image("Data/background 1.png");
+		bgEnd = new Image("Data/background 2.png");
+		health = new Image("data/health.png");
+		maxEnemies = 3;
+		levelBoss = new Image[2];
+		levelBoss[0] = new Image("Data/boss walking.png");
+		levelBoss[1] = new Image("Data/boss1 shooting.png");
+		sm = new SoundAndMusic();
 	}
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)throws SlickException {
-		
-	    //render all object in the level
-		player.render(g);
-		base.render(g);
+	    bgEnd.draw(moveBG-800, 0);
+	    bgStart.draw(moveBG, 0);
+	    bgMid.draw(moveBG+800, 0);
+	    bgEnd.draw(moveBG+800*2, 0);
+	    bgStart.draw(moveBG+800*3, 0);
+	    
+		//player.render(g);
+		//base.render(g);
 		//wall.render(g);
 		for(CollidableObject c: level.getPlatforms()){
 			c.render(g);
 		}
+		
 		for(Box b: level.getBoxes()){
 		    b.render(g);
 		}
-		for(Enemy e: level.getEnemies()) e.render(g);
-		if(!bullets.isEmpty()){
-			for(Bullet b: bullets)
-				b.render(g);
+		
+		if(!level.getEnemies().isEmpty()){
+		    for(Enemy e: level.getEnemies()){
+		        e.enemyAnimation(0);
+		        e.render(g);
+		    }
 		}
-		g.drawString("Health: "+GameInfo.getCurrentGameInfo().getLives(), 85, 10);
+		
+		if(!bullets.isEmpty()){
+			for(Bullet b: bullets){
+			    b.bulletAnimation();
+				//b.render(g);
+			}
+		}
+		Input input = container.getInput(); 
+		
+		
+		
+		
+		//Player Animations
+		if((container.getInput().isKeyDown(input.KEY_LEFT) || 
+                                container.getInput().isKeyDown(input.KEY_RIGHT)) &&
+                                !container.getInput().isKeyDown(input.KEY_DOWN)){
+		    
+		    player.runAnimation(1);
+		    
+		}else if(container.getInput().isKeyDown(input.KEY_DOWN) && 
+		        (container.getInput().isKeyDown(input.KEY_LEFT) || 
+                container.getInput().isKeyDown(input.KEY_RIGHT))){
+		    
+		    player.runAnimation(3);
+		    
+		}else if(!(container.getInput().isKeyDown(input.KEY_LEFT) || 
+                container.getInput().isKeyDown(input.KEY_RIGHT)) &&
+                container.getInput().isKeyDown(input.KEY_DOWN)){
+		    
+		    player.runAnimation(4);
+		    
+		}else player.runAnimation(2);
+        
+		//g.drawString("Health: "+GameInfo.getCurrentGameInfo().getLives(), 85, 10);
+		if(healthNum == 3 ) {health.draw(); health.draw(80, 0); health.draw(160, 0);} 
+		if(healthNum == 2) {health.draw(); health.draw(80,0);}
+		if(healthNum == 1) health.draw();
 	}
 
 	@Override
@@ -96,19 +161,20 @@ public class GamePlayState extends BasicGameState {
 		Input input = container.getInput(); 
 
 		if(container.getInput().isKeyDown(input.KEY_F) && shot >= shotDelay){
+		    sm.bullet();
 			if (player.getDirectionFacing() == DIRECTION_FACING.RIGHT)
 			{
-					Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x + player.getWidth(), 
-			        player.getPos().y + player.getHeight()/4, 
-			        5), BULLETSPEED, cm, 5, Facing.RIGHT);
+					Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x + player.getWidth()+30, 
+			        player.getPos().y + player.getHeight()*0.4f, 
+			        5), BULLETSPEED, cm, 5, Facing.RIGHT, new Image("Data/fire main.png"), 3);
 					bullets.add(bul);
 					cm.addCollidable(bul);
 			}
 			else if (player.getDirectionFacing() == DIRECTION_FACING.LEFT)
 			{
-					Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x, 
-			        player.getPos().y + player.getHeight()/4, 
-			        5), -BULLETSPEED, cm, 5, Facing.LEFT);
+					Bullet bul = new Bullet("Bullet", new Circle(player.getPos().x-30, 
+			        player.getPos().y + player.getHeight()*0.4f, 
+			        5), -BULLETSPEED, cm, 5, Facing.LEFT, new Image("Data/fire main.png"), 3);
 					bullets.add(bul);
 					cm.addCollidable(bul);
 			}
@@ -120,29 +186,29 @@ public class GamePlayState extends BasicGameState {
 		}
 		int newBulletSpeed = 0;
 		int playerBulletSpeed;
-		if(container.getInput().isKeyPressed(input.KEY_DOWN) && player.isGrounded()){
-			player.setShape(150, 75);
+		if(container.getInput().isKeyDown(input.KEY_DOWN) && player.isGrounded() && !player.isCrouching()){
+			player.setShape(PLAYER_HIEHGT, PLAYER_WIDTH);
 			player.setCrouching(true);
 			crouchFacing = player.getDirectionFacing();
-			Vector2f adjust = new Vector2f(player.getPos().x, player.getPos().y+75);
+			Vector2f adjust = new Vector2f(player.getPos().x, player.getPos().y+(PLAYER_HIEHGT-PLAYER_WIDTH));
 			
 			if(crouchFacing == DIRECTION_FACING.LEFT){
-				adjust.x -= 75;
+				adjust.x -= PLAYER_WIDTH;
 			}
 			player.setPos(adjust);
 		}
-		else if(!container.getInput().isKeyDown(input.KEY_DOWN) && player.getWidth() == 150)
+		else if(!container.getInput().isKeyDown(input.KEY_DOWN) && player.getWidth() == PLAYER_HIEHGT)
 		{
-			player.setShape(75, 150);
+			player.setShape(PLAYER_WIDTH, PLAYER_HIEHGT);
 			player.setCrouching(false);
-			Vector2f adjust = new Vector2f(player.getPos().x, player.getPos().y-75);
+			Vector2f adjust = new Vector2f(player.getPos().x, player.getPos().y-(PLAYER_HIEHGT-PLAYER_WIDTH));
 			
 			if(crouchFacing == DIRECTION_FACING.LEFT){
-				adjust.x += 75;
+				adjust.x += PLAYER_WIDTH;
 			}
 			player.setPos(adjust);
 		}
-		if(container.getInput().isKeyDown(input.KEY_RIGHT)){
+		if(container.getInput().isKeyDown(input.KEY_RIGHT) && !level.getplayerCollidingWithLeftEdge()){			
 				for(CollidableObject c: level.getPlatforms()){
 				c.move(-PLAYERSPEED, 0);
 				}
@@ -154,8 +220,8 @@ public class GamePlayState extends BasicGameState {
 				}
 				player.setDirectionFacing(DIRECTION_FACING.RIGHT);
 				playerBulletSpeed = PLAYERSPEED;
-		    
-		}else if(container.getInput().isKeyDown(input.KEY_LEFT)){
+				moveBG-=PLAYERSPEED;
+		}else if(container.getInput().isKeyDown(input.KEY_LEFT) && !level.getplayerCollidingWithRightEdge()){
 		    for(CollidableObject c: level.getPlatforms()){
 	            c.move(PLAYERSPEED, 0);
 	        }
@@ -167,12 +233,26 @@ public class GamePlayState extends BasicGameState {
 		    }
 		    player.setDirectionFacing(DIRECTION_FACING.LEFT);
 		    playerBulletSpeed = -PLAYERSPEED;
+		    moveBG+=PLAYERSPEED;
 		}else{
 			playerBulletSpeed = 0;
 		}
 		
 		//Move player
 		player.move();
+		
+		//Spawn Enemies
+		if(level.getEnemies().isEmpty() && enemiesSpawned < maxEnemies){
+		    Enemy e = new NinjaMage("Boss", new Rectangle(900, 400, 75, 150), 3, level, 7, new Image("Data/ninja mage.png"), 5);
+		    level.addEnemy(e);
+		    cm.addCollidable(e);
+		    enemiesSpawned++;
+		}else if(level.getEnemies().isEmpty() && enemiesSpawned == maxEnemies){
+		    Enemy e = new LevelBoss("Boss", new Rectangle(900, 400, 75, 150), 3, level, 7, 15, levelBoss);
+		    level.addEnemy(e);
+            cm.addCollidable(e);
+		    enemiesSpawned++;
+		}
 		
 		//Move enemies
 		for(Enemy e: level.getEnemies()){
@@ -184,29 +264,39 @@ public class GamePlayState extends BasicGameState {
 		    }
 		    else if(e.getPos().x - player.getPos().x < -130 - e.getOffSet()){
 		        e.move(3);
-		        e.setDirectionFacing(DIRECTION_FACING.RIGHT);      
+		        e.setDirectionFacing(DIRECTION_FACING.RIGHT);
+		        
+		    }else{
+		        e.move(0);
 		    }
 		    
 		    if(e.getDirectionFacing() == DIRECTION_FACING.LEFT){
-		        if(enemyShot >= shotDelay && r.nextInt(10) == 1){
-		            
-		            Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(), 
-	                        e.getPos().y + e.getHeight()/4, 
-	                        5), BULLETSPEED, cm, 8, Facing.LEFT);
-		            
-		            bullets.add(bul);
-		            cm.addCollidable(bul);
+		        if(enemyShot >= shotDelay){
+		            if(r.nextInt(2) == 1){
+		                //Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(), 
+		                //        e.getPos().y + e.getHeight()/4, 
+		                //        5), BULLETSPEED, cm, 8, Facing.LEFT, new Image("Data/fire main.png"), 3);
+		                e.shoot(bullets, BULLETSPEED, cm);
+		                if(e instanceof NinjaMage)sm.fireball();
+		                if(e instanceof LevelBoss)sm.fireball();
+		                //bullets.add(bul);
+		                //cm.addCollidable(bul);
+		            }
 		            enemyShot = 0;
 		        }
 		    }else if(e.getDirectionFacing() == DIRECTION_FACING.RIGHT){
-		        if(enemyShot >= shotDelay && r.nextInt(10) == 1){
+		        if(enemyShot >= shotDelay){
+		            if(r.nextInt(2) == 1){
+		                /*Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(),
+		                    e.getPos().y + e.getHeight()/4, 
+	                        5), BULLETSPEED, cm, 8, Facing.RIGHT, new Image("Data/fire main.png"), 3);
 		            
-		            Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(),
-	                        e.getPos().y + e.getHeight()/4, 
-	                        5), BULLETSPEED, cm, 8, Facing.RIGHT);
-		            
-		            bullets.add(bul);
-		            cm.addCollidable(bul);
+		                bullets.add(bul);
+		                cm.addCollidable(bul);*/
+		                if(e instanceof NinjaMage)sm.fireball();
+		                if(e instanceof LevelBoss)sm.fireball();
+		                e.shoot(bullets, BULLETSPEED, cm);
+		            }
 		            enemyShot = 0;
 		        }
 		    }
@@ -214,7 +304,7 @@ public class GamePlayState extends BasicGameState {
 		    enemyShot++;
 		}
 		
-		//Enemy shoot
+		
 		
 		
 		
@@ -248,15 +338,22 @@ public class GamePlayState extends BasicGameState {
 		
 		//If player hits the winBox, exit level, enter new level if one exists.
 		if(level.getPlayerHitWinBox()){
+		    sm.stopMusic();
 		    level.setPlayerHitWinBox(false);
 		    GameInfo.getCurrentGameInfo().nextLevel();
 		    level.removeGameObjects();
 		    game.enterState(1);
 		}
+		
+		healthNum = GameInfo.getCurrentGameInfo().getLives();
+		if(healthNum == 0)sm.dead();
 
 	}
 	
 	public void enter(GameContainer container, StateBasedGame game)throws SlickException{
+	    //sm.level1Song();
+	    moveBG = 0;
+	    enemiesSpawned = 0;
 	    cm = new CollisionManager();
 	    if(!GameInfo.getCurrentGameInfo().getPlayerExists()){
 	        
@@ -298,8 +395,8 @@ public class GamePlayState extends BasicGameState {
 		cm.addHandler(new EnemyAndBulletCollisionHandler(cm, level, bullets));
 		cm.addHandler(new EnemyAndPlatformCollisionHandler(level));
 		cm.addHandler(new PlayerAndBulletCollisionHandler(cm, bullets));
-		cm.addHandler(new LeftEndPlatformCollisionHandler());
-		cm.addHandler(new RightEndPlatformCollisionHandler());
+		cm.addHandler(new LeftEndPlatformCollisionHandler(cm, level, player));
+		cm.addHandler(new RightEndPlatformCollisionHandler(cm, level, player));
 		//cm.addHandler(new WallAndBulletCollisionHandler(cm, level));
 	}
 

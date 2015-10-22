@@ -4,8 +4,10 @@ import org.newdawn.slick.SlickException;
 
 public class RightEndPlatformCollisionHandler implements ICollisionHandler
 {
-    public RightEndPlatformCollisionHandler(){
-        
+	private Level level;
+
+    public RightEndPlatformCollisionHandler(CollisionManager manager, Level level, Player player){
+        this.level = level;
     }
 
     @Override
@@ -24,18 +26,25 @@ public class RightEndPlatformCollisionHandler implements ICollisionHandler
     public void performCollision(ICollidableObject collidable1,
             ICollidableObject collidable2) throws SlickException
     {
-        Player player;
-        CollidableShapeObject end;
-        
-        if(collidable1 instanceof Player){
-            player = (Player)collidable1;
-            end = (CollidableShapeObject)collidable2;
-        }else{
-            player = (Player)collidable2;
-            end = (CollidableShapeObject)collidable1;
-        }
-        
-        System.out.println("Colliding with right end.");
+    	   Player player;
+           CollidableShapeObject end;
+
+   		if(!collidable1.isCollidingWith(collidable2)) {
+   			level.setplayerCollidingWithRightEdge(false);
+   			return;
+   		}
+           
+           if(collidable1 instanceof Player){
+               player = (Player)collidable1;
+               end = (CollidableShapeObject)collidable2;
+           }else{
+               player = (Player)collidable2;
+               end = (CollidableShapeObject)collidable1;
+           }
+           if(player.isCollidingWith(end) && player.getPos().y + player.getHeight() > end.getPos().y)
+           {
+           	level.setplayerCollidingWithRightEdge(true);
+           }
     }
 
 }

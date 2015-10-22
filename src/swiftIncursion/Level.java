@@ -17,6 +17,8 @@ public class Level {
 	private ArrayList<Box> boxes;
 	private ArrayList<Enemy> enemies;
 	private boolean playerCollidingWithPlatform;
+	private boolean playerCollidingWithLeftEdge;
+	private boolean playerCollidingWithRightEdge;
 	private boolean hitWinBox;
 	private boolean bulletCollision;
 	private boolean enemyBulletCollision;
@@ -44,7 +46,7 @@ public class Level {
 	    boxes.add(b);
 	}
 	
-	private void addEnemy(Enemy e){
+	public void addEnemy(Enemy e){
 	    enemies.add(e);
 	}
 	
@@ -70,10 +72,25 @@ public class Level {
 	    return enemies;
 	}
 	
+	public void setplayerCollidingWithLeftEdge(boolean b){
+		playerCollidingWithLeftEdge = b;
+	}
+	
+	public boolean getplayerCollidingWithLeftEdge(){
+		return playerCollidingWithLeftEdge;
+	}
+	
 	public void setplayerCollidingWithPlatform(boolean b){
 		playerCollidingWithPlatform = b;
 	}
 	
+	public boolean getplayerCollidingWithRightEdge(){
+		return playerCollidingWithRightEdge;
+	}
+	public void setplayerCollidingWithRightEdge(boolean b){
+		playerCollidingWithRightEdge = b;
+	}
+
 	public void setBulletCollisionWithEnemy(boolean b){
 	    enemyBulletCollision = b;
 	}
@@ -127,7 +144,7 @@ public class Level {
                             Integer.parseInt(coords[2]), 
                             Integer.parseInt(coords[3])), 
                             Integer.parseInt(args[4])));
-	            }else if(args[1].equals("ENEMY")){
+	            }/*else if(args[1].equals("ENEMY")){
 	                addEnemy(new Enemy(args[2], new Rectangle(
 	                        Integer.parseInt(coords[0]), 
                             Integer.parseInt(coords[1]), 
@@ -135,7 +152,7 @@ public class Level {
                             Integer.parseInt(coords[3])),
                             3, level,
                             Integer.parseInt(args[4])));
-	            }
+	            }*/
 	        }else if(args[0].equals("IMAGE")){
 	            String[] coords = args[4].split(",");
 	            if(args[1].equals("IMAGEPLATFORM")){

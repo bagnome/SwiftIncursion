@@ -24,6 +24,9 @@ public class Level {
 	private boolean enemyBulletCollision;
 	private Level level;
     private boolean enemyCollidingWithPlatform;
+    private Enemy levelBoss;
+	private Enemy levelEnemy;
+	private String levelEnemytxt;
 	
 	public Level(){
 		platforms = new ArrayList<CollidableObject>();
@@ -119,15 +122,27 @@ public class Level {
 		this.bulletCollision = bulletCollision;
 	}
 	
+	public Enemy getLevelBoss(){
+		return levelBoss;
+	}
+	
+	public Enemy getLevelEnemy() throws SlickException{
+		if(levelEnemytxt == "Ninja Mage") return new NinjaMage(level);
+		return new NinjaMage(level);
+	}
+	
 	public void loadLevel(InputStream is) throws SlickException{
 	    //Level l = new Level();
 	    BufferedReader br = new BufferedReader(new InputStreamReader(is));
 	    String[] args = readNextValidLine(br);
+	    
 	     while(args != null){
 	        
 	        for(String s: args){
 	            System.out.print(s + " ");
 	        }
+	        if(args[0].equals("Tank Lizard")) levelBoss = new TankLizard(level);
+	        if(args[0].equals("Ninja Mage")) levelEnemytxt = args[0];
 	        if(args[0].equals("SHAPE")){
 	            String[] coords = args[3].split(",");
 	            if(args[1].equals("PLATFORM")){
@@ -195,8 +210,5 @@ public class Level {
         return args;
     }
 
-    
-
-    
-
+   
 }

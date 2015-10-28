@@ -6,6 +6,10 @@
 #Squidward smells
 
 #boss
+Tank Lizard
+
+#enemy for level
+Ninja Mage
 
 #Remove spaces between numbers.
 #SHAPE|PLATFORM/BOX/ENEMY|name|x,y,width,length|collisionType

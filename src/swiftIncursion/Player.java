@@ -109,12 +109,13 @@ public class Player extends People implements KeyListener {
             }
             if(i == 1 && GROUNDED)walkingAnimation.draw(xPos+15, this.getPos().y, width+5, walkAnimation[0].getHeight());
             else if(i == 2 && GROUNDED)playerWalkSprites.getSubImage(5, 0).draw(xPos+15, this.getPos().y, width+5, walkAnimation[0].getHeight());
-            else if (i == 3 && GROUNDED)crawlingAnimation.draw(xPos, this.getPos().y-110, widthC, crawling[0].getHeight());
-            else if(i == 4 && GROUNDED)crawling[0].draw(xPos, this.getPos().y-110, widthC, crawling[0].getHeight());
+            else if (i == 3 && GROUNDED)crawlingAnimation.draw(xPos, this.getPos().y-90, widthC, crawling[0].getHeight());
+            else if(i == 4 && GROUNDED)crawling[0].draw(xPos, this.getPos().y-90, widthC, crawling[0].getHeight());
             else if (yVel < 0)playerWalkSprites.getSubImage(6, 0).draw(xPos+15, this.getPos().y, width+5, walkAnimation[0].getHeight());
             else if (yVel > 0)playerWalkSprites.getSubImage(7, 0).draw(xPos+15, this.getPos().y, width+5, walkAnimation[0].getHeight());
             
         }
+        
 		@Override
 		public void inputEnded() {
 			
@@ -136,7 +137,7 @@ public class Player extends People implements KeyListener {
 		}
 
 		@Override
-		public void keyPressed(int numKey, char key) {
+		public void keyPressed(int numKey, char key){
 		    
 		   
 			switch(numKey){
@@ -148,15 +149,15 @@ public class Player extends People implements KeyListener {
 					System.out.println(yVel);
 					GROUNDED = false;
 					level.setplayerCollidingWithPlatform(false);
-					SoundAndMusic sm = new SoundAndMusic();
-					try
-					{
-					    sm.jump();
-					} catch (SlickException e)
-					{
-                // TODO Auto-generated catch block
-					    e.printStackTrace();
-					}
+					SoundAndMusic sm = GameInfo.getCurrentGameInfo().getSounds();
+                    try
+                    {
+                        sm.jump();
+                    } catch (SlickException e)
+                    {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
 				}
 				
 				break;

@@ -19,6 +19,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 
+
 import swiftIncursion.SwiftIncursion;
 import swiftIncursion.GameInfo;
 
@@ -64,7 +65,7 @@ public class MenuState extends BasicGameState {
 		quit1 = new Image("Data/menu/quit 1.png");
 		quit2 = new Image("Data/menu/quit 2.png");
 		helpstate = new Image("Data/menu/HELPSTATE.png");
-		sm = new SoundAndMusic();
+		sm = GameInfo.getCurrentGameInfo().getSounds();
 		sm.titleScreenSong();
 		selected = false;
 		//hud = new Hud();
@@ -182,7 +183,8 @@ public class MenuState extends BasicGameState {
 	}
 
 	public void enter(GameContainer container, StateBasedGame game)throws SlickException{
-		
+		sm.titleScreenSong();
+		optionSelected = -1;
 	}
 
 	@Override

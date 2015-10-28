@@ -54,10 +54,11 @@ public class Enemy extends People{
     }
     
     public void render(Graphics g){
-        
-        
-        
 
+    }
+    
+    public void shootSound() throws SlickException{
+    	
     }
     
     public void move(float xVel){

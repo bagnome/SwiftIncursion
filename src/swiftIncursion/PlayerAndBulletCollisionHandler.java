@@ -41,7 +41,7 @@ public class PlayerAndBulletCollisionHandler implements ICollisionHandler
             player = (Player)collidable2;
             bullet = (Bullet)collidable1; 
         }
-        SoundAndMusic sm = new SoundAndMusic();
+        SoundAndMusic sm = GameInfo.getCurrentGameInfo().getSounds();
         sm.health();
         sm.hit();
         cm.removeCollidable(bullet);

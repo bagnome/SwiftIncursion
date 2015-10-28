@@ -4,6 +4,13 @@
 
 #moreTesting|evanMoreTesting|keepGoing|yourGood|yourGood|keepGoing
 #Squidward smells good
+
+#boss
+Tank Lizard
+
+#enemy for level
+Ninja Mage
+
 #Remove spaces between numbers.
 
 SHAPE|PLATFORM|Platform 1|500,450,200,10|2

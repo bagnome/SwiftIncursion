@@ -10,6 +10,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Circle;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
 
 import swiftIncursion.Bullet.Facing;
@@ -23,11 +24,10 @@ public class NinjaMage extends Enemy
     private Image[] mageImages;
     private Animation mageAnimation;
 
-    NinjaMage(String name, Shape shape, int speed, Level level,
-            int collisionType, Image image, int health)
+    NinjaMage(Level level) throws SlickException
     {
-        super(name, shape, speed, level, collisionType, health);
-        this.image = image;
+        super("Enemy", new Rectangle(900, 400, 75, 150), 3, level, 7, 5);
+        image = new Image("Data/ninja mage.png");
         setUpAnimation();
     }
     

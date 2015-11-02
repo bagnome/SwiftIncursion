@@ -127,7 +127,8 @@ public class Level {
 	}
 	
 	public Enemy getLevelEnemy() throws SlickException{
-		if(levelEnemytxt == "Ninja Mage") return new NinjaMage(level);
+		if(levelEnemytxt.equals("Ninja Mage")) return new NinjaMage(level);
+		if(levelEnemytxt.equals("Ram")) return new Ram(level);
 		return new NinjaMage(level);
 	}
 	
@@ -143,6 +144,7 @@ public class Level {
 	        }
 	        if(args[0].equals("Tank Lizard")) levelBoss = new TankLizard(level);
 	        if(args[0].equals("Ninja Mage")) levelEnemytxt = args[0];
+	        if(args[0].equals("Ram")) levelEnemytxt = args[0];
 	        if(args[0].equals("SHAPE")){
 	            String[] coords = args[3].split(",");
 	            if(args[1].equals("PLATFORM")){

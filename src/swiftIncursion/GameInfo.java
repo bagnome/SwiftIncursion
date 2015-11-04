@@ -55,4 +55,8 @@ public class GameInfo
         playerExists = p;
     }
 
+	public void resetLives() {
+		lives = 3;		
+	}
+
 }

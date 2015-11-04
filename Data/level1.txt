@@ -9,7 +9,7 @@
 Tank Lizard
 
 #enemy for level
-Ram
+Ninja Mage
 
 #Remove spaces between numbers.
 #SHAPE|PLATFORM/BOX/ENEMY|name|x,y,width,length|collisionType

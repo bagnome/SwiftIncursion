@@ -31,7 +31,7 @@ public class Enemy extends People{
     private Animation mageAnimation;
     protected float health;
     protected float startingHealth;
-    
+    private int shotDelay = 60;
 
     Enemy(String name, Shape shape, int speed, Level level, int collisionType, 
             int health)
@@ -54,7 +54,7 @@ public class Enemy extends People{
     }
     
     public void render(Graphics g){
-    	
+
     }
     
     public void shootSound() throws SlickException{
@@ -119,6 +119,9 @@ public class Enemy extends People{
         collidingWithPlatform = b;
     }
     
+    public int getShotDelay(){
+    	return shotDelay;
+    }
     public int getOffSet(){
         return offSetFromPlayer;
     }

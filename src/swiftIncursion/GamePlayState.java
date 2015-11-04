@@ -37,13 +37,12 @@ public class GamePlayState extends BasicGameState {
 	private ImagePlatform dummyImage;
 	private Box dummyBox;
 	private ArrayList<Bullet> bullets;
-	private int shotDelay = 60;
-	private int shot = shotDelay;
 	private DIRECTION_FACING crouchFacing = DIRECTION_FACING.RIGHT;
 	private int enemyShot;
     private Bullet dummyBullet2;
     private Platform dummyLeft;
     private Platform dummyRight;
+    private Upgrade dummyUpgrade;
     private final float PLAYER_HIEHGT = 120;
     private final float PLAYER_WIDTH = 25;
     private Image bgStart;
@@ -57,15 +56,15 @@ public class GamePlayState extends BasicGameState {
     private Image[] levelBoss;
     private SoundAndMusic sm;
     private static enum STATE {
-    	PLAY, PAUSED, MENU
+    	PLAY, PAUSED, MENU, EXIT
     };
     private STATE currentState;
-    private STATE prevState;
-    private Font font;
+    private int gameState;
 	
 	public GamePlayState(int id) {
+		cm = new CollisionManager();
 		stateId = id;
-		level = new Level();
+		level = new Level(cm);
 		bullets = new ArrayList<Bullet>();
 		enemyShot = 0;
 		
@@ -85,6 +84,7 @@ public class GamePlayState extends BasicGameState {
 		dummyEnemy = new Enemy("", new Rectangle(1,-10,1,1),0, level, 7, 5);
 		dummyLeft = new Platform("", new Rectangle(0, -10, 1, 1), 10);
 		dummyRight = new Platform("", new Rectangle(0, -10, 1, 1), 9);
+		dummyUpgrade = new Upgrade("", new Rectangle(0,-10, 1,1), 11, 1, new Image("Data/Speed Upgrade.png"), 2);
 		bgStart = new Image("Data/background 3.png");
 		bgMid = new Image("Data/background 1.png");
 		bgEnd = new Image("Data/background 2.png");
@@ -127,6 +127,14 @@ public class GamePlayState extends BasicGameState {
 				for(Bullet b: bullets){
 				    b.bulletAnimation();
 					b.render(g);
+				}
+			}
+			if (!level.getUpgrades().isEmpty())
+			{
+				for(Upgrade u: level.getUpgrades())
+				{
+					u.upgradeAnimation();
+					u.render(g);
 				}
 			}
 			Input input = container.getInput(); 
@@ -180,7 +188,7 @@ public class GamePlayState extends BasicGameState {
 		switch(currentState){
 		
 		case PLAY:
-			if(container.getInput().isKeyDown(input.KEY_F) && shot >= shotDelay && !player.isCrouching()){
+			if(container.getInput().isKeyDown(input.KEY_F) && player.getShot() >= player.getShotDelay() && !player.isCrouching()){
 			    sm.bullet();
 				if (player.getDirectionFacing() == DIRECTION_FACING.RIGHT)
 				{
@@ -189,6 +197,23 @@ public class GamePlayState extends BasicGameState {
 				        5), BULLETSPEED, cm, 5, Facing.RIGHT, new Image("Data/fire main.png"), 3);
 						bullets.add(bul);
 						cm.addCollidable(bul);
+						if (player.getShotsFired() > 1)
+						{
+							Bullet bull = new Bullet("Bullet", new Circle(player.getPos().x + player.getWidth()+30, 
+					        player.getPos().y + player.getHeight()*0.5f, 
+					        5), BULLETSPEED, cm, 5, Facing.RIGHT, new Image("Data/fire main.png"), 3);
+							bullets.add(bull);
+							cm.addCollidable(bull);
+						}
+						if (player.getShotsFired() > 2)
+						{
+
+							Bullet bulle = new Bullet("Bullet", new Circle(player.getPos().x + player.getWidth()+30, 
+					        player.getPos().y + player.getHeight()*0.3f, 
+					        5), BULLETSPEED, cm, 5, Facing.RIGHT, new Image("Data/fire main.png"), 3);
+							bullets.add(bulle);
+							cm.addCollidable(bulle);
+						}
 				}
 				else if (player.getDirectionFacing() == DIRECTION_FACING.LEFT)
 				{
@@ -197,12 +222,29 @@ public class GamePlayState extends BasicGameState {
 				        5), -BULLETSPEED, cm, 5, Facing.LEFT, new Image("Data/fire main.png"), 3);
 						bullets.add(bul);
 						cm.addCollidable(bul);
+						if (player.getShotsFired() > 1)
+						{
+							Bullet bull = new Bullet("Bullet", new Circle(player.getPos().x-30, 
+							        player.getPos().y + player.getHeight()*0.5f, 
+					        5), -BULLETSPEED, cm, 5, Facing.LEFT, new Image("Data/fire main.png"), 3);
+							bullets.add(bull);
+							cm.addCollidable(bull);
+						}
+						if (player.getShotsFired() > 2)
+						{
+
+							Bullet bulle = new Bullet("Bullet", new Circle(player.getPos().x-30, 
+							        player.getPos().y + player.getHeight()*0.3f, 
+					        5), -BULLETSPEED, cm, 5, Facing.LEFT, new Image("Data/fire main.png"), 3);
+							bullets.add(bulle);
+							cm.addCollidable(bulle);
+						}
 				}
-				shot = 0;
+				player.setShot(0);
 			}
-			if (shot < shotDelay)
+			if (player.getShot() < player.getShotDelay())
 			{
-				shot++;
+				player.incrementShot();
 			}
 			int newBulletSpeed = 0;
 			int playerBulletSpeed;
@@ -238,6 +280,9 @@ public class GamePlayState extends BasicGameState {
 					for(Enemy e: level.getEnemies()){
 	                e.move(-PLAYERSPEED, 0);
 					}
+					for (Upgrade u : level.getUpgrades()){
+						u.move(-PLAYERSPEED, 0);
+					}
 					player.setDirectionFacing(DIRECTION_FACING.RIGHT);
 					playerBulletSpeed = PLAYERSPEED;
 					moveBG-=PLAYERSPEED;
@@ -250,6 +295,9 @@ public class GamePlayState extends BasicGameState {
 		        }
 			    for(Enemy e: level.getEnemies()){
 			        e.move(PLAYERSPEED, 0);
+			    }
+			    for(Upgrade u : level.getUpgrades()){
+			    	u.move(PLAYERSPEED, 0);
 			    }
 			    player.setDirectionFacing(DIRECTION_FACING.LEFT);
 			    playerBulletSpeed = -PLAYERSPEED;
@@ -291,7 +339,7 @@ public class GamePlayState extends BasicGameState {
 			    }
 			    
 			    if(e.getDirectionFacing() == DIRECTION_FACING.LEFT){
-			        if(enemyShot >= shotDelay){
+			        if(enemyShot >= e.getShotDelay()){
 			            if(r.nextInt(2) == 1){
 			                //Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(), 
 			                //        e.getPos().y + e.getHeight()/4, 
@@ -304,7 +352,7 @@ public class GamePlayState extends BasicGameState {
 			            enemyShot = 0;
 			        }
 			    }else if(e.getDirectionFacing() == DIRECTION_FACING.RIGHT){
-			        if(enemyShot >= shotDelay){
+			        if(enemyShot >= e.getShotDelay()){
 			            if(r.nextInt(2) == 1){
 			                /*Bullet bul = new Bullet("Bullet", new Circle(e.getPos().x + e.getWidth(),
 			                    e.getPos().y + e.getHeight()/4, 
@@ -356,11 +404,13 @@ public class GamePlayState extends BasicGameState {
 			
 			//If player hits the winBox, exit level, enter new level if one exists.
 			if(level.getPlayerHitWinBox()){
-			    sm.stopMusic();
+			    //sm.stopMusic();
 			    level.setPlayerHitWinBox(false);
 			    GameInfo.getCurrentGameInfo().nextLevel();
-			    level.removeGameObjects();
-			    game.enterState(1);
+			    //level.removeGameObjects();
+			    gameState = 1;
+			    //game.enterState(1);
+			    currentState = STATE.EXIT;
 			}
 			
 			healthNum = GameInfo.getCurrentGameInfo().getLives();
@@ -379,11 +429,20 @@ public class GamePlayState extends BasicGameState {
 			
 		case MENU:
 			sm.pauseMusic();
-			if(container.getInput().isKeyPressed(input.KEY_ENTER))game.enterState(0);
+			if(container.getInput().isKeyPressed(input.KEY_ENTER)){
+				gameState = 0;//game.enterState(0);
+				currentState = STATE.EXIT;
+			}
 			if(container.getInput().isKeyPressed(input.KEY_ESCAPE)) {
 				sm.resumeMusic();
 				currentState = STATE.PLAY;
 			}
+			break;
+			
+		case EXIT:
+			sm.stopMusic();
+			level.removeGameObjects();
+			game.enterState(gameState);
 			break;
 		}
 
@@ -394,7 +453,7 @@ public class GamePlayState extends BasicGameState {
 	    sm.level1Song();
 	    moveBG = 0;
 	    enemiesSpawned = 0;
-	    cm = new CollisionManager();
+	    
 	    if(!GameInfo.getCurrentGameInfo().getPlayerExists()){
 	        
 	        
@@ -419,6 +478,7 @@ public class GamePlayState extends BasicGameState {
 		cm.addCollidable(dummyEnemy);
 		cm.addCollidable(dummyLeft);
 		cm.addCollidable(dummyRight);
+		cm.addCollidable(dummyUpgrade);
 		//cm.addCollidable(wall);
 		for(CollidableObject p: level.getPlatforms()){
 			cm.addCollidable(p);
@@ -432,12 +492,13 @@ public class GamePlayState extends BasicGameState {
 		cm.addHandler(new PlayerAndPlatformCollisionHandler(cm, level, player));
 	    cm.addHandler(new PlayerAndImagePlatformCollisionHandler(cm, level, player));
 		cm.addHandler(new PlayerAndWinBoxCollisionManager(level));
-		cm.addHandler(new EnemyAndBulletCollisionHandler(cm, level, bullets));
+		cm.addHandler(new EnemyAndBulletCollisionHandler(cm, level, bullets, player));
 		cm.addHandler(new EnemyAndPlatformCollisionHandler(level));
 		cm.addHandler(new PlayerAndBulletCollisionHandler(cm, bullets));
 		cm.addHandler(new LeftEndPlatformCollisionHandler(cm, level, player));
 		cm.addHandler(new RightEndPlatformCollisionHandler(cm, level, player));
 		//cm.addHandler(new WallAndBulletCollisionHandler(cm, level));
+		cm.addHandler(new PlayerAndUpgradeCollisionHandler(cm, level, sm));
 	}
 
 	@Override

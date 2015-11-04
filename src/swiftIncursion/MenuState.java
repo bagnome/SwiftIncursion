@@ -49,7 +49,6 @@ public class MenuState extends BasicGameState {
 		//initialize buttons
 	public MenuState(int id) {
 		this.stateId = id;
-		level = new Level();
 		
 	}
 		
@@ -169,6 +168,7 @@ public class MenuState extends BasicGameState {
 		
 		if (optionSelected == SwiftIncursion.GAMEPLAYSTATE) {
 		    sm.stopMusic();
+		    GameInfo.getCurrentGameInfo().resetLives();
 			menu.enterState(SwiftIncursion.GAMEPLAYSTATE);
 		} else if (optionSelected == EXITSTATE) {
 			System.exit(0);		

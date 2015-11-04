@@ -16,6 +16,7 @@ public class Level {
 	private ArrayList<CollidableObject> platforms;
 	private ArrayList<Box> boxes;
 	private ArrayList<Enemy> enemies;
+	private ArrayList<Upgrade> Upgrades;
 	private boolean playerCollidingWithPlatform;
 	private boolean playerCollidingWithLeftEdge;
 	private boolean playerCollidingWithRightEdge;
@@ -27,16 +28,19 @@ public class Level {
     private Enemy levelBoss;
 	private Enemy levelEnemy;
 	private String levelEnemytxt;
+	private CollisionManager cm;
 	
-	public Level(){
+	public Level(CollisionManager cm){
 		platforms = new ArrayList<CollidableObject>();
 		boxes = new ArrayList<Box>();
 		enemies = new ArrayList<Enemy>();
+		Upgrades = new ArrayList<Upgrade>();
 		playerCollidingWithPlatform = false;
 		hitWinBox = false;
 		bulletCollision = false;
 		enemyBulletCollision = false;
 		this.level = this;
+		this.cm = cm;
 	}
 	
 	private void addPlatforms(Platform p){
@@ -52,12 +56,18 @@ public class Level {
 	public void addEnemy(Enemy e){
 	    enemies.add(e);
 	}
+	public void addUpgrade(Upgrade u){
+		Upgrades.add(u);
+	}
 	
 	private void addImagePlatforms(ImagePlatform i){
 	    platforms.add(i);
 	}
 	
 	public void removeGameObjects(){
+		for(CollidableObject c: platforms) cm.removeCollidable(c);
+		for(Box b: boxes) cm.removeCollidable(b);
+		for(Enemy e: enemies) cm.removeCollidable(e);
 	    platforms.clear();
 	    boxes.clear();
 	    enemies.clear();
@@ -73,6 +83,9 @@ public class Level {
 	
 	public ArrayList<Enemy> getEnemies(){
 	    return enemies;
+	}
+	public ArrayList<Upgrade> getUpgrades(){
+		return Upgrades;
 	}
 	
 	public void setplayerCollidingWithLeftEdge(boolean b){
@@ -127,8 +140,7 @@ public class Level {
 	}
 	
 	public Enemy getLevelEnemy() throws SlickException{
-		if(levelEnemytxt.equals("Ninja Mage")) return new NinjaMage(level);
-		if(levelEnemytxt.equals("Ram")) return new Ram(level);
+		if(levelEnemytxt == "Ninja Mage") return new NinjaMage(level);
 		return new NinjaMage(level);
 	}
 	
@@ -144,7 +156,6 @@ public class Level {
 	        }
 	        if(args[0].equals("Tank Lizard")) levelBoss = new TankLizard(level);
 	        if(args[0].equals("Ninja Mage")) levelEnemytxt = args[0];
-	        if(args[0].equals("Ram")) levelEnemytxt = args[0];
 	        if(args[0].equals("SHAPE")){
 	            String[] coords = args[3].split(",");
 	            if(args[1].equals("PLATFORM")){

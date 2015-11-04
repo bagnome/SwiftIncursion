@@ -17,6 +17,7 @@ public class SoundAndMusic{
     private Sound[] sounds;
     private Music music;
     private Music[] soundTracks;
+    private Sound pop;
     
     public SoundAndMusic() throws SlickException{
         soundTracks = new Music[2];
@@ -32,7 +33,7 @@ public class SoundAndMusic{
         sounds[6] = new Sound("Game sounds/ding.ogg");
         sounds[7] = new Sound("Game sounds/tank fire.ogg");
         sounds[8] = new Sound("Game sounds/tank tracks.ogg");
-        //sounds[9] = new Sound();
+        sounds[9] = new Sound("Game sounds/blop.ogg");
     }
     
     public void titleScreenSong() throws SlickException{
@@ -74,6 +75,10 @@ public class SoundAndMusic{
     public void hit() throws SlickException{
         hit = sounds[2];
         hit.play();
+    }
+    public void pop() throws SlickException{
+    	pop = sounds[9];
+    	pop.play();
     }
     
     public void jump() throws SlickException{

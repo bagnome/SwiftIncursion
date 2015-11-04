@@ -25,7 +25,10 @@ public class Player extends People implements KeyListener {
     private SpriteSheet playerCrouchSprites;
     private Image[] crawling;
     private Animation crawlingAnimation;
-		
+    private int shotDelay = 60;
+    private int shot = shotDelay;
+	private int shotsFired = 1;
+	
 	public Player(String name, Rectangle rectangle, int speed, Level level, int collisionType) throws SlickException{
 		super (name, rectangle, collisionType, level, collisionType);
 		this.rectangle = rectangle;
@@ -164,8 +167,31 @@ public class Player extends People implements KeyListener {
 			}
 		}	
 			
+		public int getShotDelay(){
+			return shotDelay;
+		}
+		public int getShot(){
+			return shot;
+		}
+		public void incrementShot(){
+			shot++;
+		}
+		public void setShot(int s){
+			shot = s;
+		}
+		public void upgradeShotSpeed(){
+			shotDelay = shotDelay/2;
+		}
+		public void upgradeShots(){
+			if (shotsFired <3)
+			{
+				shotsFired++;
+			}
+		}
+		public int getShotsFired(){
+			return shotsFired;
+		}
 		
-
 		@Override
 		public void keyReleased(int arg0, char key) {
 			switch(arg0){

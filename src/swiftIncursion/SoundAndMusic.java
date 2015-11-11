@@ -38,13 +38,13 @@ public class SoundAndMusic{
     
     public void titleScreenSong() throws SlickException{
         music = soundTracks[0];
-        music.setVolume(0.2f);
+        //music.setVolume(0.2f);
         music.loop();
     }
     
     public void level1Song() throws SlickException{
         music = soundTracks[1];
-        music.setVolume(0.001f);
+        //music.setVolume(0.001f);
         music.loop();
     }
     

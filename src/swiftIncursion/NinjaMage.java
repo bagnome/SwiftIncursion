@@ -26,7 +26,7 @@ public class NinjaMage extends Enemy
 
     NinjaMage(Level level) throws SlickException
     {
-        super("Enemy", new Rectangle(900, 400, 75, 150), 3, level, 7, 5);
+        super("Enemy", new Rectangle(900, 400, 75, 150), 2, level, 7, 5);
         image = new Image("Data/ninja mage.png");
         setUpAnimation();
     }

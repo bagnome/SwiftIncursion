@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="swiftIncursion.SwiftIncursion" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/SwiftIncursion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="358" y="113"/>    
+    <position height="53" width="106" x="938" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="swiftIncursion.GamePlayState" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/GamePlayState.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="356" y="192"/>    
+    <position height="53" width="111" x="1083" y="130"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="swiftIncursion.GameInfo" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/GameInfo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="157" y="124"/>    
+    <position height="53" width="87" x="97" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="swiftIncursion.Box" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Box.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="520" y="122"/>    
+    <position height="53" width="87" x="807" y="708"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -39,7 +39,7 @@
   </class>  
   <enumeration id="5" language="java" name="swiftIncursion.Bullet.Facing" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Bullet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="544" y="272"/>    
+    <position height="53" width="119" x="2038" y="801"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -48,7 +48,7 @@
   </enumeration>  
   <class id="6" language="java" name="swiftIncursion.Bullet" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Bullet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="535" y="186"/>    
+    <position height="53" width="87" x="1974" y="708"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="swiftIncursion.Enemy" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Enemy.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="542" y="352"/>    
+    <position height="53" width="87" x="1934" y="522"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="swiftIncursion.Level" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Level.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="350" y="307"/>    
+    <position height="53" width="87" x="1605" y="419"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -75,7 +75,7 @@
   </class>  
   <enumeration id="9" language="java" name="swiftIncursion.People.DIRECTION_FACING" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/People.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="699" y="483"/>    
+    <position height="53" width="132" x="2200" y="708"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -84,7 +84,7 @@
   </enumeration>  
   <class id="10" language="java" name="swiftIncursion.People" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/People.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="676" y="390"/>    
+    <position height="53" width="87" x="2173" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="swiftIncursion.Player" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Player.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="515" y="427"/>    
+    <position height="53" width="87" x="954" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="swiftIncursion.Platform" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/Platform.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="559" y="551"/>    
+    <position height="53" width="87" x="828" y="522"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="swiftIncursion.WinState" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/WinState.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="175" y="197"/>    
+    <position height="53" width="87" x="938" y="130"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="swiftIncursion.CollidableImageObject" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/CollidableImageObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="805" y="128"/>    
+    <position height="53" width="151" x="1530" y="615"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="swiftIncursion.CollidableShapeObject" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/CollidableShapeObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="868" y="295"/>    
+    <position height="53" width="152" x="807" y="615"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -138,7 +138,7 @@
   </class>  
   <interface id="16" language="java" name="swiftIncursion.ICollidableObject" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/ICollidableObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-125" y="276"/>    
+    <position height="53" width="119" x="999" y="987"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -147,7 +147,7 @@
   </interface>  
   <interface id="17" language="java" name="swiftIncursion.ICollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/ICollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="90" y="503"/>    
+    <position height="53" width="119" x="999" y="894"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -156,7 +156,7 @@
   </interface>  
   <class id="18" language="java" name="swiftIncursion.EnemyAndBulletCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/EnemyAndBulletCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="141" y="358"/>    
+    <position height="53" width="208" x="559" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -165,7 +165,7 @@
   </class>  
   <class id="19" language="java" name="swiftIncursion.EnemyAndPlatformCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/EnemyAndPlatformCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="142" y="279"/>    
+    <position height="53" width="225" x="43" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="swiftIncursion.LeftEndPlatformCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/LeftEndPlatformCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="292" y="443"/>    
+    <position height="53" width="208" x="1123" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="swiftIncursion.RightEndPlatformCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/RightEndPlatformCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="298" y="525"/>    
+    <position height="53" width="215" x="1698" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -192,7 +192,7 @@
   </class>  
   <class id="22" language="java" name="swiftIncursion.PlayerAndBulletCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/PlayerAndBulletCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="300" y="604"/>    
+    <position height="53" width="206" x="999" y="615"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -202,7 +202,7 @@
   <class id="23" language="java" name="swiftIncursion.PlayerAndImagePlatformCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/PlayerAndImagePlatformCollisionHandler.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="300" y="674"/>    
+    <position height="53" width="258" x="2384" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -211,7 +211,7 @@
   </class>  
   <class id="24" language="java" name="swiftIncursion.PlayerAndPlatformCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/PlayerAndPlatformCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="51" y="608"/>    
+    <position height="53" width="223" x="1995" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -220,7 +220,7 @@
   </class>  
   <class id="25" language="java" name="swiftIncursion.PlayerAndWinBoxCollisionManager" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/PlayerAndWinBoxCollisionManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-120" y="497"/>    
+    <position height="53" width="224" x="1371" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
@@ -229,479 +229,651 @@
   </class>  
   <class id="26" language="java" name="swiftIncursion.WallAndBulletCollisionHandler" project="SwiftIncusion" 
     file="/SwiftIncusion/src/swiftIncursion/WallAndBulletCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-176" y="605"/>    
+    <position height="53" width="195" x="551" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="false"/>      
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <dependency id="27">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <association id="28">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="29" name="crouchFacing">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="30" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="31">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="32">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <association id="33">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="34" name="bullets">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="35" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <class id="27" language="java" name="swiftIncursion.PlayerAndUpgradeCollisionHandler" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/PlayerAndUpgradeCollisionHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="222" x="276" y="223"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="swiftIncursion.TankLizard" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/TankLizard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="2061" y="615"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="swiftIncursion.NinjaMage" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/NinjaMage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="1934" y="615"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="swiftIncursion.MenuState" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/MenuState.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="1637" y="130"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="swiftIncursion.Upgrade" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/Upgrade.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="361" y="708"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="swiftIncursion.CollidableObject" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/CollidableObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="116" x="1350" y="522"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <enumeration id="33" language="java" name="swiftIncursion.CollidableObject.DIRECTION" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/CollidableObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="119" x="1371" y="615"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </enumeration>  
+  <class id="34" language="java" name="swiftIncursion.CollisionManager" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/CollisionManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="122" x="746" y="801"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="swiftIncursion.CollisionData" project="SwiftIncusion" 
+    file="/SwiftIncusion/src/swiftIncursion/CollisionManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="98" x="329" y="801"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
   <association id="36">    
+    <bendpoint x="1604" y="223"/>    
+    <bendpoint x="1625" y="326"/>    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="37" name="base">        
+      <attribute id="37" name="level">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="38" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="39">    
+    <bendpoint x="298" y="419"/>    
+    <bendpoint x="298" y="522"/>    
+    <bendpoint x="298" y="615"/>    
+    <bendpoint x="330" y="708"/>    
+    <bendpoint x="457" y="801"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <association id="41">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="42" name="rightEnd">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
+  <association id="44">    
+    <bendpoint x="2332" y="223"/>    
+    <bendpoint x="2332" y="326"/>    
+    <bendpoint x="2290" y="419"/>    
+    <bendpoint x="2127" y="522"/>    
+    <bendpoint x="2085" y="615"/>    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="40" name="level">        
+      <attribute id="45" name="dummyBullet2">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="41" minimum="0" maximum="1">        
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <bendpoint x="1646" y="223"/>    
+    <bendpoint x="1646" y="326"/>    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="48" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="42">    
+  <association id="50">    
+    <bendpoint x="1943" y="223"/>    
+    <bendpoint x="1943" y="326"/>    
+    <bendpoint x="1943" y="419"/>    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="43" name="bullets">        
+      <attribute id="51" name="dummyEnemy">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="44" minimum="0" maximum="2147483647">        
+      <multiplicity id="52" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="45">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="16"/>  
+  <dependency id="53">    
+    <bendpoint x="1964" y="326"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
   </dependency>  
-  <association id="46">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="47" name="dummyBullet2">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="48" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="49">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <realization id="50">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <association id="51">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="52" name="rightEnd">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="54">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="55">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="18"/>  
-  </dependency>  
-  <dependency id="56">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <dependency id="57">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <dependency id="58">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="20"/>  
-  </dependency>  
-  <realization id="59">    
+  <realization id="54">    
+    <bendpoint x="499" y="326"/>    
+    <bendpoint x="499" y="419"/>    
+    <bendpoint x="499" y="522"/>    
+    <bendpoint x="499" y="615"/>    
+    <bendpoint x="499" y="708"/>    
+    <bendpoint x="499" y="801"/>    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="17"/>  
   </realization>  
-  <dependency id="60">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="5"/>  
+  <dependency id="55">    
+    <bendpoint x="256" y="419"/>    
+    <bendpoint x="256" y="522"/>    
+    <bendpoint x="256" y="615"/>    
+    <bendpoint x="256" y="708"/>    
+    <bendpoint x="256" y="801"/>    
+    <bendpoint x="256" y="894"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="16"/>  
   </dependency>  
+  <association id="56">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="57" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="58" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="59">    
+    <bendpoint x="224" y="223"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <realization id="60">    
+    <bendpoint x="1732" y="419"/>    
+    <bendpoint x="1732" y="522"/>    
+    <bendpoint x="1732" y="615"/>    
+    <bendpoint x="1515" y="708"/>    
+    <bendpoint x="1298" y="801"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
   <association id="61">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="62" name="level">        
+    <bendpoint x="902" y="223"/>    
+    <bendpoint x="902" y="326"/>    
+    <bendpoint x="923" y="419"/>    
+    <bendpoint x="945" y="522"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="62" name="winBox">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="63" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="64">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="65" name="level"/>      
-      <multiplicity id="66" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="67">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="9"/>  
-  </nesting>  
-  <association id="68">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="69" name="dummyBullet">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="70" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="71">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="72" name="level">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="73" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="74">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="21"/>  
-  </dependency>  
-  <dependency id="75">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <realization id="76">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <association id="77">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="78" name="bullets">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="79" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="80">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <association id="81">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="82" name="player">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="83" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="84">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="85" name="level">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="86" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="87">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <association id="88">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="89" name="dummyRight">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="90" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="91">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="92" name="facing">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="93" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="94">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="95" name="dummyEnemy">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="96" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="97">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <dependency id="98">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <association id="99">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="100" name="dummyLeft">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="101" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="102">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="23"/>  
-  </dependency>  
-  <dependency id="103">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="19"/>  
-  </dependency>  
-  <dependency id="104">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <realization id="105">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <association id="106">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="107" name="level">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="108" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="109">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <association id="110">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="111" name="winBox">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="112" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="113">    
-    <end type="SOURCE" refId="4"/>    
+  <association id="64">    
+    <bendpoint x="662" y="894"/>    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="65" name="object2">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="66" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="31"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
-  <association id="114">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="115" name="level"/>      
-      <multiplicity id="116" minimum="0" maximum="1"/>    
+  <association id="69">    
+    <bendpoint x="839" y="223"/>    
+    <bendpoint x="839" y="326"/>    
+    <bendpoint x="839" y="419"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="70" name="dummyLeft">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="72">    
+    <bendpoint x="394" y="326"/>    
+    <bendpoint x="394" y="419"/>    
+    <bendpoint x="436" y="522"/>    
+    <bendpoint x="478" y="615"/>    
+    <bendpoint x="478" y="708"/>    
+    <bendpoint x="478" y="801"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="73">    
+    <bendpoint x="541" y="419"/>    
+    <bendpoint x="541" y="522"/>    
+    <bendpoint x="541" y="615"/>    
+    <bendpoint x="520" y="708"/>    
+    <bendpoint x="520" y="801"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <dependency id="74">    
+    <bendpoint x="2091" y="708"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="75">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="76" name="bullets">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="77" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="78">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <association id="79">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="80" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="81" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="117">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="118">    
+  <association id="82">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="83" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="84" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <bendpoint x="1319" y="522"/>    
+    <bendpoint x="1298" y="615"/>    
+    <bendpoint x="1256" y="708"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="86" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="87" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="88">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
-  <dependency id="119">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="120">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="121" name="level">        
+  <association id="89">    
+    <bendpoint x="797" y="223"/>    
+    <bendpoint x="776" y="326"/>    
+    <bendpoint x="776" y="419"/>    
+    <bendpoint x="776" y="522"/>    
+    <bendpoint x="776" y="615"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="90" name="dummyBox">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="122" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="123">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="124" name="level">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="125" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="126">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </nesting>  
-  <association id="127">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="128" name="boxes">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="129" minimum="0" maximum="2147483647">        
+      <multiplicity id="91" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="130">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="131">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <association id="132">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="133" name="level">        
+  <association id="92">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="93" name="player">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="134" minimum="0" maximum="1">        
+      <multiplicity id="94" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="135">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="136" name="enemies">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="137" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="138">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="139" name="level"/>      
-      <multiplicity id="140" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="141">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="10"/>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="32"/>  
   </generalization>  
-  <association id="142">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="143" name="level">        
+  <association id="97">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="98" name="level">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="144" minimum="0" maximum="1">        
+      <multiplicity id="99" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="145">    
+  <dependency id="100">    
+    <bendpoint x="2362" y="419"/>    
+    <bendpoint x="2362" y="522"/>    
+    <bendpoint x="2362" y="615"/>    
+    <bendpoint x="2362" y="708"/>    
+    <bendpoint x="2362" y="801"/>    
+    <bendpoint x="2362" y="894"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="101">    
+    <bendpoint x="881" y="326"/>    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="102" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="103" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <dependency id="105">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <nesting id="106">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <association id="107">    
+    <bendpoint x="2311" y="326"/>    
+    <bendpoint x="2311" y="419"/>    
+    <bendpoint x="2190" y="522"/>    
+    <bendpoint x="2190" y="615"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="108" name="facing">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="109" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="110">    
+    <bendpoint x="1742" y="223"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="111">    
+    <bendpoint x="2248" y="419"/>    
+    <bendpoint x="2148" y="522"/>    
+    <bendpoint x="2148" y="615"/>    
+    <bendpoint x="2148" y="708"/>    
+    <bendpoint x="2148" y="801"/>    
+    <bendpoint x="2148" y="894"/>    
     <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="112">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="113">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="114" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="115" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="117" name="leftEnd">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="119">    
+    <bendpoint x="2164" y="419"/>    
+    <bendpoint x="2064" y="522"/>    
+    <bendpoint x="2106" y="615"/>    
+    <bendpoint x="2106" y="708"/>    
+    <bendpoint x="2106" y="801"/>    
+    <bendpoint x="2106" y="894"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <realization id="120">    
+    <bendpoint x="1256" y="419"/>    
+    <bendpoint x="1256" y="522"/>    
+    <bendpoint x="1256" y="615"/>    
+    <bendpoint x="1277" y="708"/>    
+    <bendpoint x="1277" y="801"/>    
+    <end type="SOURCE" refId="25"/>    
     <end type="TARGET" refId="17"/>  
   </realization>  
+  <association id="121">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="122" name="handler">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="123" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="124">    
+    <bendpoint x="1943" y="708"/>    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="125">    
+    <bendpoint x="881" y="708"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="126" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="127" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="128">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="129" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="130" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="131">    
+    <bendpoint x="2353" y="326"/>    
+    <bendpoint x="2353" y="419"/>    
+    <bendpoint x="2353" y="522"/>    
+    <bendpoint x="2353" y="615"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <dependency id="132">    
+    <bendpoint x="1112" y="223"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <association id="133">    
+    <bendpoint x="415" y="326"/>    
+    <bendpoint x="436" y="419"/>    
+    <bendpoint x="478" y="522"/>    
+    <bendpoint x="520" y="615"/>    
+    <bendpoint x="541" y="708"/>    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="134" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="135" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="136">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <dependency id="137">    
+    <bendpoint x="1092" y="223"/>    
+    <bendpoint x="1092" y="326"/>    
+    <bendpoint x="1277" y="419"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="138">    
+    <bendpoint x="1235" y="522"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="139">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="140" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="141" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="142">    
+    <bendpoint x="2672" y="223"/>    
+    <bendpoint x="2672" y="326"/>    
+    <bendpoint x="2502" y="419"/>    
+    <bendpoint x="2332" y="522"/>    
+    <bendpoint x="2169" y="615"/>    
+    <bendpoint x="2169" y="708"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="143">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="144" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="145" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="146">    
-    <end type="SOURCE" refId="11" navigable="false">      
+    <end type="SOURCE" refId="23" navigable="false">      
       <attribute id="147" name="level">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
@@ -713,73 +885,554 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="149">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="150" name="leftEnd">        
+    <bendpoint x="361" y="326"/>    
+    <bendpoint x="361" y="419"/>    
+    <bendpoint x="361" y="522"/>    
+    <bendpoint x="361" y="615"/>    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="150" name="upgrades">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="151" minimum="0" maximum="1">        
+      <multiplicity id="151" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="31" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="152">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="153" name="dummyBox">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="154" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <realization id="152">    
+    <bendpoint x="1214" y="419"/>    
+    <bendpoint x="1214" y="522"/>    
+    <bendpoint x="1235" y="615"/>    
+    <bendpoint x="1235" y="708"/>    
+    <bendpoint x="1235" y="801"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <dependency id="153">    
+    <bendpoint x="1711" y="522"/>    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="154">    
+    <bendpoint x="478" y="326"/>    
+    <bendpoint x="457" y="419"/>    
+    <bendpoint x="457" y="522"/>    
+    <bendpoint x="457" y="615"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
   <dependency id="155">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="16"/>  
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="13"/>  
   </dependency>  
   <association id="156">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="157" name="facing">        
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="157" name="level">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="158" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="159">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="160">    
+  <association id="159">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="160" name="platforms">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="161" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="162">    
+    <bendpoint x="1071" y="223"/>    
+    <bendpoint x="1071" y="326"/>    
+    <bendpoint x="1042" y="419"/>    
+    <bendpoint x="962" y="522"/>    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="22"/>  
   </dependency>  
-  <dependency id="161">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="25"/>  
-  </dependency>  
-  <dependency id="162">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
   <association id="163">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="164" name="_instance">        
+    <bendpoint x="923" y="326"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="164" name="level">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="165" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="166">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="167">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="168" name="collisionHandlers">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="169" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="170">    
+    <bendpoint x="1667" y="326"/>    
+    <bendpoint x="1430" y="419"/>    
+    <bendpoint x="1193" y="522"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <realization id="171">    
+    <bendpoint x="2332" y="419"/>    
+    <bendpoint x="2169" y="522"/>    
+    <bendpoint x="2127" y="615"/>    
+    <bendpoint x="2112" y="708"/>    
+    <bendpoint x="2085" y="801"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="172">    
+    <bendpoint x="2206" y="419"/>    
+    <bendpoint x="2054" y="522"/>    
+    <bendpoint x="1903" y="615"/>    
+    <bendpoint x="1796" y="708"/>    
+    <bendpoint x="1690" y="801"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <realization id="173">    
+    <bendpoint x="1319" y="615"/>    
+    <bendpoint x="1319" y="708"/>    
+    <bendpoint x="1319" y="801"/>    
+    <bendpoint x="1319" y="894"/>    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <dependency id="174">    
+    <bendpoint x="1236" y="223"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="175">    
+    <bendpoint x="528" y="223"/>    
+    <bendpoint x="457" y="326"/>    
+    <bendpoint x="478" y="419"/>    
+    <bendpoint x="520" y="522"/>    
+    <bendpoint x="562" y="615"/>    
+    <bendpoint x="562" y="708"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="176" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="177" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="178">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <generalization id="179">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <association id="180">    
+    <bendpoint x="2142" y="223"/>    
+    <bendpoint x="2248" y="326"/>    
+    <bendpoint x="2227" y="419"/>    
+    <bendpoint x="2085" y="522"/>    
+    <bendpoint x="2043" y="615"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="181" name="bullets">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="182" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="183">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="184" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="185" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="186">    
+    <bendpoint x="436" y="326"/>    
+    <bendpoint x="415" y="419"/>    
+    <bendpoint x="382" y="522"/>    
+    <bendpoint x="319" y="615"/>    
+    <bendpoint x="308" y="708"/>    
+    <bendpoint x="298" y="801"/>    
+    <bendpoint x="298" y="894"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <nesting id="187">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="33"/>  
+  </nesting>  
+  <association id="188">    
+    <bendpoint x="520" y="326"/>    
+    <bendpoint x="520" y="419"/>    
+    <bendpoint x="551" y="522"/>    
+    <bendpoint x="583" y="615"/>    
+    <bendpoint x="583" y="708"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="189" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="190" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="191">    
+    <bendpoint x="983" y="522"/>    
+    <bendpoint x="734" y="615"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="192" name="Upgrades">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="193" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="194">    
+    <bendpoint x="2185" y="419"/>    
+    <bendpoint x="2269" y="326"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="195">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="196" name="enemies">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="197" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="198">    
+    <bendpoint x="245" y="223"/>    
+    <bendpoint x="298" y="326"/>    
+    <bendpoint x="340" y="419"/>    
+    <bendpoint x="340" y="522"/>    
+    <bendpoint x="340" y="615"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="199" name="dummyUpgrade">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="200" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="201">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="202" name="_instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="203" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="204">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="205" name="level">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="206" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="207">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="208">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="209" name="facing">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="210" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="211">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="32"/>  
+  </generalization>  
+  <dependency id="212">    
+    <bendpoint x="1842" y="522"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="213">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="214">    
+    <bendpoint x="683" y="894"/>    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="215" name="object1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="216" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="217">    
+    <bendpoint x="1008" y="708"/>    
+    <bendpoint x="1008" y="801"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <association id="218">    
+    <bendpoint x="818" y="223"/>    
+    <bendpoint x="797" y="326"/>    
+    <bendpoint x="797" y="419"/>    
+    <bendpoint x="797" y="522"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="219" name="base">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="220" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="221">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="222" name="levelBoss">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="223" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="224">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="225">    
+    <bendpoint x="755" y="419"/>    
+    <bendpoint x="755" y="522"/>    
+    <bendpoint x="755" y="615"/>    
+    <bendpoint x="755" y="708"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="226" name="cm">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="227" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="228">    
+    <bendpoint x="2290" y="223"/>    
+    <bendpoint x="2290" y="326"/>    
+    <bendpoint x="2269" y="419"/>    
+    <bendpoint x="2106" y="522"/>    
+    <bendpoint x="2064" y="615"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="229" name="dummyBullet">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="230" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="231">    
+    <bendpoint x="1574" y="419"/>    
+    <bendpoint x="1642" y="522"/>    
+    <bendpoint x="1711" y="615"/>    
+    <bendpoint x="1711" y="708"/>    
+    <bendpoint x="1711" y="801"/>    
+    <bendpoint x="1711" y="894"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="232">    
+    <bendpoint x="319" y="326"/>    
+    <bendpoint x="319" y="419"/>    
+    <bendpoint x="319" y="522"/>    
+    <bendpoint x="277" y="615"/>    
+    <bendpoint x="277" y="708"/>    
+    <bendpoint x="277" y="801"/>    
+    <bendpoint x="277" y="894"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="233">    
+    <bendpoint x="1548" y="223"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="234">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="235">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="236" name="levelEnemy">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="237" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="238">    
+    <bendpoint x="2693" y="223"/>    
+    <bendpoint x="2693" y="326"/>    
+    <bendpoint x="2693" y="419"/>    
+    <bendpoint x="2693" y="522"/>    
+    <bendpoint x="2693" y="615"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="239" name="crouchFacing">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="240" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="241">    
+    <bendpoint x="1298" y="522"/>    
+    <bendpoint x="1277" y="615"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="242" name="boxes">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="243" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="244">    
+    <bendpoint x="1027" y="223"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="245" name="player">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="246" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="247">    
+    <bendpoint x="1625" y="223"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <association id="248">    
+    <bendpoint x="860" y="223"/>    
+    <bendpoint x="860" y="326"/>    
+    <bendpoint x="860" y="419"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="249" name="dummyRight">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="250" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="251">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <association id="252">    
+    <bendpoint x="818" y="326"/>    
+    <bendpoint x="1021" y="419"/>    
+    <bendpoint x="1277" y="522"/>    
+    <bendpoint x="1340" y="615"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="253" name="bullets">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="254" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="255">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="256">    
+    <bendpoint x="526" y="130"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="false" package="false" protected="false" private="false" static="false"/>    

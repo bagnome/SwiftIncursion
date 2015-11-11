@@ -61,8 +61,8 @@ public class TankLizard extends Enemy
             xPos = this.getPos().x + this.getWidth() + 15;
             width = -runningImages[0].getWidth(); 
         }
-        if(xVel == 0)runningImages[0].draw(xPos, this.getPos().y, width+5, runningImages[0].getHeight());
-        if(xVel <0 || xVel > 0)runningAnimation.draw(xPos, this.getPos().y, width+5, runningImages[0].getHeight());
+        if(xVel == 0)runningImages[0].draw(xPos, this.getPos().y, width+10, runningImages[0].getHeight());
+        if(xVel <0 || xVel > 0)runningAnimation.draw(xPos, this.getPos().y, width+10, runningImages[0].getHeight());
     }
     
     public void shootSound() throws SlickException{

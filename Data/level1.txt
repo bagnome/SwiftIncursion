@@ -11,6 +11,9 @@ Tank Lizard
 #enemy for level
 Ram
 
+#BackGround
+Background|Data/first floor entrance.png|Data/background 1.png|Data/end of level.png
+
 #Remove spaces between numbers.
 #SHAPE|PLATFORM/BOX/ENEMY|name|x,y,width,length|collisionType
 #IMAGE|IMAGEPLATFORM|name|path|x,y,width,length|collisionType
@@ -23,5 +26,4 @@ SHAPE|PLATFORM|Platform 5|2100,350,100,10|2
 #SHAPE|PLATFORM|Platform 6|180,275,200,10|2
 #SHAPE|ENEMY|Enemy|Data/ninja mage.png|600,150,75,150|7
 #SHAPE|ENEMY|Enemy|Data/ninja mage.png|500,150,75,150|7
-SHAPE|BOX|Win Box|2300,400,100,200|3
-#IMAGE|IMAGEPLATFORM|Img Platform 1|Data/GrassPlatform.png|50,490,200,30|6
+SHAPE|BOX|Win Box|2300,400,100,175|3

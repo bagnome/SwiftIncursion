@@ -29,8 +29,11 @@ public class Level {
 	private Enemy levelEnemy;
 	private String levelEnemytxt;
 	private CollisionManager cm;
+	private String[] bgs;
+	private boolean defeated;
 	
 	public Level(CollisionManager cm){
+		bgs = new String[3];
 		platforms = new ArrayList<CollidableObject>();
 		boxes = new ArrayList<Box>();
 		enemies = new ArrayList<Enemy>();
@@ -41,6 +44,7 @@ public class Level {
 		enemyBulletCollision = false;
 		this.level = this;
 		this.cm = cm;
+		defeated = false;
 	}
 	
 	private void addPlatforms(Platform p){
@@ -139,10 +143,22 @@ public class Level {
 		return levelBoss;
 	}
 	
+	public void setBossDefeated(boolean set){
+		defeated = set;
+	}
+	
+	public boolean isBossDefeated(){
+		return defeated;
+	}
+	
 	public Enemy getLevelEnemy() throws SlickException{
 		if(levelEnemytxt.equals("Ninja Mage")) return new NinjaMage(level);
 		if(levelEnemytxt.equals("Ram")) return new Ram(new Rectangle(900, 400, 75, 150), level);
 		return new NinjaMage(level);
+	}
+
+	public String[] getBackgroundImages(){
+		return bgs;
 	}
 	
 	public void loadLevel(InputStream is) throws SlickException{
@@ -154,6 +170,11 @@ public class Level {
 	        
 	        for(String s: args){
 	            System.out.print(s + " ");
+	        }
+	        if(args[0].equals("Background")){
+	        	bgs[0] = args[1];
+	        	bgs[1] = args[2];
+	        	bgs[2] = args[3];
 	        }
 	        if(args[0].equals("Tank Lizard")) levelBoss = new TankLizard(level);
 	        if(args[0].equals("Ninja Mage")) levelEnemytxt = args[0];

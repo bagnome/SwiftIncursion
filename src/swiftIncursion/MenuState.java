@@ -90,6 +90,7 @@ public class MenuState extends BasicGameState {
 			help2.draw(50, 250, 2);
 			helpstate.draw(375, 450);}
 			}
+		g.drawImage(new Image("Data/title.png"), -10, -100);
 	
 		}
 	

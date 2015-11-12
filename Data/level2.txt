@@ -11,13 +11,15 @@ Tank Lizard
 #enemy for level
 Ninja Mage
 
+#BackGround
+Background|Data/2ndt floor entrance.png|Data/background 1.png|Data/end of level.png
+
 #Remove spaces between numbers.
 
-SHAPE|PLATFORM|Platform 1|500,450,200,10|2
-SHAPE|PLATFORM|Platform 2|190,100,200,10|2
-SHAPE|PLATFORM|Platform 3|0,200,100,10|2
-SHAPE|PLATFORM|Platform 4|430,500,50,10|2
-SHAPE|PLATFORM|Platform 5|400,350,100,10|2
-SHAPE|PLATFORM|Platform 6|180,275,200,10|2
-SHAPE|BOX|Win Box|430,300,50,50|3
-#IMAGE|IMAGEPLATFORM|Img Platform 1|Data/GrassPlatform.png|50,490,200,30|6
+SHAPE|PLATFORM|Platform 1|600,450,2200,10|2
+#SHAPE|PLATFORM|Platform 2|190,100,200,10|2
+#SHAPE|PLATFORM|Platform 3|0,200,100,10|2
+#SHAPE|PLATFORM|Platform 4|430,500,50,10|2
+#SHAPE|PLATFORM|Platform 5|400,350,100,10|2
+#SHAPE|PLATFORM|Platform 6|180,275,200,10|2
+SHAPE|BOX|Win Box|2300,400,100,175|3

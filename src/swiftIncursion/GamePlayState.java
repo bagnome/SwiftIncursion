@@ -80,6 +80,8 @@ public class GamePlayState extends BasicGameState {
 	public void init(GameContainer container, StateBasedGame game)
 			throws SlickException {
 
+		
+		
 		player = new Player("Player", new Rectangle(300, 400, PLAYER_WIDTH,
 				PLAYER_HIEHGT), 3, level, 1);
 		base = new Platform("Base", new Rectangle(-2500,
@@ -99,9 +101,7 @@ public class GamePlayState extends BasicGameState {
 		dummyRight = new Platform("", new Rectangle(0, -10, 1, 1), 9);
 		dummyUpgrade = new Upgrade("", new Rectangle(0, -10, 1, 1), 11, 1,
 				new Image("Data/Speed Upgrade.png"), 2);
-		bgStart = new Image("Data/background 3.png");
-		bgMid = new Image("Data/background 1.png");
-		bgEnd = new Image("Data/background 2.png");
+		
 		health = new Image("data/health.png");
 		
 		ramming = false;
@@ -117,11 +117,11 @@ public class GamePlayState extends BasicGameState {
 		switch (currentState) {
 
 		case PLAY:
-			bgEnd.draw(moveBG - 800, 0);
+			
 			bgStart.draw(moveBG, 0);
 			bgMid.draw(moveBG + 800, 0);
 			bgEnd.draw(moveBG + 800 * 2, 0);
-			bgStart.draw(moveBG + 800 * 3, 0);
+			
 
 			//player.render(g);
 			// base.render(g);
@@ -475,7 +475,7 @@ public class GamePlayState extends BasicGameState {
 			
 			// If player hits the winBox, exit level, enter new level if one
 			// exists.
-			if (level.getPlayerHitWinBox()) {
+			if (level.getPlayerHitWinBox() && level.isBossDefeated()) {
 				// sm.stopMusic();
 				level.setPlayerHitWinBox(false);
 				GameInfo.getCurrentGameInfo().nextLevel();
@@ -484,6 +484,7 @@ public class GamePlayState extends BasicGameState {
 				// game.enterState(1);
 				currentState = STATE.EXIT;
 			}
+			else level.setPlayerHitWinBox(false);
 
 			healthNum = GameInfo.getCurrentGameInfo().getLives();
 			if (healthNum == 0)
@@ -537,12 +538,13 @@ public class GamePlayState extends BasicGameState {
 		sm.level1Song();
 		moveBG = 0;
 		enemiesSpawned = 0;
+		level.setBossDefeated(false);
 
 		if (!GameInfo.getCurrentGameInfo().getPlayerExists()) {
 
 			GameInfo.getCurrentGameInfo().setPlayerExists(true);
 		}
-
+		
 		try {
 			level.loadLevel(new FileInputStream(new File("Data/level"
 					+ GameInfo.getCurrentGameInfo().getLevelID() + ".txt")));
@@ -550,6 +552,11 @@ public class GamePlayState extends BasicGameState {
 			System.out.println("No level to load");
 			game.enterState(2);
 		}
+		
+		bgStart = new Image(level.getBackgroundImages()[0]);
+		bgMid = new Image(level.getBackgroundImages()[1]);
+		bgEnd = new Image(level.getBackgroundImages()[2]);
+		
 		container.getInput().addKeyListener(player);
 		cm.addCollidable(player);
 		cm.addCollidable(base);

@@ -80,7 +80,8 @@ public class EnemyAndBulletCollisionHandler implements ICollisionHandler{
             	level.addUpgrade(upgrade);
                 cm.addCollidable(upgrade);	
         	}
-        	
+        	if(enemy instanceof TankLizard)
+        		level.setBossDefeated(true);
         	cm.removeCollidable(enemy);
             level.getEnemies().remove(enemy);
             }

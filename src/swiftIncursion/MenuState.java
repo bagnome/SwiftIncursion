@@ -168,8 +168,9 @@ public class MenuState extends BasicGameState {
 		menu.enterState(1);
 		
 		if (optionSelected == SwiftIncursion.GAMEPLAYSTATE) {
-		    sm.stopMusic();
+		 //   sm.stopMusic();
 		    GameInfo.getCurrentGameInfo().resetLives();
+		    GameInfo.getCurrentGameInfo().resetLevelID();
 			menu.enterState(SwiftIncursion.GAMEPLAYSTATE);
 		} else if (optionSelected == EXITSTATE) {
 			System.exit(0);		

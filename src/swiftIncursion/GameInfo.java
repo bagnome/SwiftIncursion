@@ -9,6 +9,7 @@ public class GameInfo
     private int lives;
     private boolean playerExists;
     private SoundAndMusic sm;
+    private Player player;
     
     public static GameInfo getCurrentGameInfo(){
         return _instance;
@@ -51,12 +52,20 @@ public class GameInfo
         return playerExists;
     }
     
-    public void setPlayerExists(boolean p){
+    public void setPlayerExists(boolean p, Player player){
         playerExists = p;
+        this.player = player;
     }
 
 	public void resetLives() {
-		lives = 3;		
+		lives = 3;
+		if (getPlayerExists())
+		{
+			player.resetUpgrades();
+		}
+	}
+	public void resetLevelID(){
+		levelID = 1;
 	}
 
 }

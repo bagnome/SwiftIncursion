@@ -21,9 +21,9 @@ public class Enemy extends People{
     private Random r;
     private int speed;
     private Level level;
-    private static final float GRAVITY = 1f;
-    private static boolean GROUNDED = true;
-    private boolean collidingWithPlatform;
+    protected static final float GRAVITY = 1f;
+    protected static boolean GROUNDED = true;
+    protected boolean collidingWithPlatform;
     private int offSetFromPlayer;
     private Image image;
     private SpriteSheet mageSprites;
@@ -31,8 +31,9 @@ public class Enemy extends People{
     private Animation mageAnimation;
     protected float health;
     protected float startingHealth;
-    private int shotDelay = 60;
-
+    protected int shotDelay = 60;
+    protected int shot = 0;
+    
     Enemy(String name, Shape shape, int speed, Level level, int collisionType, 
             int health)
     {
@@ -124,6 +125,16 @@ public class Enemy extends People{
     }
     public int getOffSet(){
         return offSetFromPlayer;
+    }
+    public int getShot(){
+    	return shot;
+    }
+    public void setShot(int shot)
+    {
+    	this.shot = shot;
+    }
+    public void incrementShot(){
+    	shot++;
     }
 
     public float getHealth(){

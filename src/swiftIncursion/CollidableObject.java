@@ -73,7 +73,7 @@ public class CollidableObject implements ICollidableObject
     public void render(Graphics g){
         
         g.draw(shape);
-        
+       // g.drawString(name, this.getPos().x,this.getPos().y);
     }
     
     @Override

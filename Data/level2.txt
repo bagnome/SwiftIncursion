@@ -6,17 +6,17 @@
 #Squidward smells good
 
 #boss
-Tank Lizard
+Bunny
 
 #enemy for level
-Ninja Mage
+Ram
 
 #BackGround
 Background|Data/2ndt floor entrance.png|Data/background 1.png|Data/end of level.png
 
 #Remove spaces between numbers.
 
-SHAPE|PLATFORM|Platform 1|600,450,2200,10|2
+#SHAPE|PLATFORM|Platform 1|600,450,2200,10|2
 #SHAPE|PLATFORM|Platform 2|190,100,200,10|2
 #SHAPE|PLATFORM|Platform 3|0,200,100,10|2
 #SHAPE|PLATFORM|Platform 4|430,500,50,10|2

@@ -8,7 +8,8 @@ public class PlayerAndBulletCollisionHandler implements ICollisionHandler
 {
     private CollisionManager cm;
     private ArrayList<Bullet> bullets;
-
+    private boolean bulletHit;
+    
     public PlayerAndBulletCollisionHandler(CollisionManager cm, ArrayList<Bullet> bullets){
         this.cm = cm;
         this.bullets = bullets;
@@ -46,8 +47,12 @@ public class PlayerAndBulletCollisionHandler implements ICollisionHandler
         sm.hit();
         cm.removeCollidable(bullet);
         bullets.remove(bullet);
-        GameInfo.getCurrentGameInfo().removeLife();
-        
+        if (!bullet.isBulletHit())
+        {
+        System.out.println("Bullet collided with player");
+        	GameInfo.getCurrentGameInfo().removeLife();
+        	bullet.setBulletHit(true);
+        }
     }
 
 }

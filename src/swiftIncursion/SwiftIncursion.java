@@ -15,6 +15,7 @@ public class SwiftIncursion extends StateBasedGame{
 	public final static int GAMEPLAYSTATE = 1;
 	public final static int WINSTATE = 2;
 	public final static int MENUSTATE = 0;
+	public final static int GAMEOVERSTATE = 3;
 	public final static String[] icons = {"Data/icon1.png", "Data/icon1-24by24.png", "Data/icon1-32by32.png"};
 	
 	public SwiftIncursion() throws SlickException {
@@ -36,8 +37,8 @@ public class SwiftIncursion extends StateBasedGame{
 	    addState(new MenuState(MENUSTATE));
 	    addState(new GamePlayState(GAMEPLAYSTATE));
 		addState(new WinState(WINSTATE));
+		addState(new GameOverState(GAMEOVERSTATE));
 		GameInfo.creatNewGameInfo();
-		
 	}
 
 }

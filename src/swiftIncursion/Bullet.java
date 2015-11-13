@@ -18,6 +18,8 @@ public class Bullet extends CollidableShapeObject{
     private Image[] bullets;
     private Animation bulletAnimation;
     private int numberOfSprites;
+    private boolean bulletHit = false;
+    private int yVelocity;
     
 	Bullet(String name, Shape shape, int velocity, CollisionManager cm, int collisionType, Facing facing, 
 	        Image image, int numberOfSprites) {
@@ -27,7 +29,7 @@ public class Bullet extends CollidableShapeObject{
 		this.facing  = facing;
 		this.numberOfSprites = numberOfSprites;
 		bulletAnimationSetUp(image);
-		
+		yVelocity = 0;
 	}
 	
 	public Facing getFacing(){
@@ -37,7 +39,7 @@ public class Bullet extends CollidableShapeObject{
 		this.facing = facing;
 	}
 	public void move(){
-		shape.setLocation(shape.getLocation().x += velocity, shape.getLocation().y);
+		shape.setLocation(shape.getLocation().x += velocity, shape.getLocation().y + yVelocity);
 	}
 	
 	public int getVelocity(){
@@ -55,6 +57,10 @@ public class Bullet extends CollidableShapeObject{
 	public void setVelocity(int vel){
 		velocity = vel;
 	}
+	public void setYVelocity(int vel)
+		{
+		yVelocity = vel;
+		}
 	
 	public boolean isOnScreen(GameContainer container){
 	    if(shape.getLocation().x < 0 || shape.getLocation().x > container.getWidth()) return false;
@@ -70,7 +76,12 @@ public class Bullet extends CollidableShapeObject{
 	    }
 	    bulletAnimation = new Animation(bullets, 100);
 	}
-	
+    public boolean isBulletHit(){
+    	return bulletHit;
+    }
+    public void setBulletHit(boolean bulletHit){
+    	this.bulletHit = bulletHit;
+    }
 	public void bulletAnimation(){
 	    float xPos;
 	    float width;
@@ -82,7 +93,7 @@ public class Bullet extends CollidableShapeObject{
             width = -bullets[0].getWidth();
 	    }
 	    
-	    bulletAnimation.draw(xPos, this.getPos().y-20, width, bullets[0].getHeight());
+	    bulletAnimation.draw(xPos, this.getPos().y-20, width, bullets[0].getHeight() + 10);
 	    
 	}
 

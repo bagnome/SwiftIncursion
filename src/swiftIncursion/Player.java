@@ -25,7 +25,7 @@ public class Player extends People implements KeyListener {
     private SpriteSheet playerCrouchSprites;
     private Image[] crawling;
     private Animation crawlingAnimation;
-    private int shotDelay = 60;
+    private int shotDelay = 20;
     private int shot = shotDelay;
 	private int shotsFired = 1;
 	
@@ -180,13 +180,19 @@ public class Player extends People implements KeyListener {
 			shot = s;
 		}
 		public void upgradeShotSpeed(){
-			shotDelay = shotDelay/2;
+			if (shotDelay > 6){
+			shotDelay = shotDelay-3;
+			}
 		}
 		public void upgradeShots(){
 			if (shotsFired <3)
 			{
 				shotsFired++;
 			}
+		}
+		public void resetUpgrades(){
+			shotDelay = 20;
+			shotsFired = 1;
 		}
 		public int getShotsFired(){
 			return shotsFired;

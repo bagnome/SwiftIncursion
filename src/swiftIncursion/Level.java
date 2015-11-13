@@ -31,6 +31,7 @@ public class Level {
 	private CollisionManager cm;
 	private String[] bgs;
 	private boolean defeated;
+	private Player player;
 	
 	public Level(CollisionManager cm){
 		bgs = new String[3];
@@ -46,7 +47,10 @@ public class Level {
 		this.cm = cm;
 		defeated = false;
 	}
-	
+	public void getPlayer(Player player)
+	{
+		this.player = player;
+	}
 	private void addPlatforms(Platform p){
 		platforms.add(p);
 		platforms.add(p.getLeftEnd());
@@ -154,6 +158,9 @@ public class Level {
 	public Enemy getLevelEnemy() throws SlickException{
 		if(levelEnemytxt.equals("Ninja Mage")) return new NinjaMage(level);
 		if(levelEnemytxt.equals("Ram")) return new Ram(new Rectangle(900, 400, 75, 150), level);
+		if(levelEnemytxt.equals("Fire Man")){
+        	return new FireMan(new Rectangle(900,400,75,150), level);
+        }
 		return new NinjaMage(level);
 	}
 
@@ -177,8 +184,12 @@ public class Level {
 	        	bgs[2] = args[3];
 	        }
 	        if(args[0].equals("Tank Lizard")) levelBoss = new TankLizard(level);
+	        if(args[0].equals("Taylor Swift")) levelBoss = new TaylorSwift(new Rectangle(900,400,75,150),level, player);
 	        if(args[0].equals("Ninja Mage")) levelEnemytxt = args[0];
 	        if(args[0].equals("Ram")) levelEnemytxt = args[0];
+	        if(args[0].equals("Fire Man")){ levelEnemytxt = args[0];
+	        }
+	        if(args[0].equals("Bunny")) levelBoss = new Bunny(new Rectangle(900, 400, 50, 50),level);
 	        if(args[0].equals("SHAPE")){
 	            String[] coords = args[3].split(",");
 	            if(args[1].equals("PLATFORM")){

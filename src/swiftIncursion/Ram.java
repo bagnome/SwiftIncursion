@@ -20,9 +20,10 @@ public class Ram extends Enemy{
 	private Image[] ramImages;
 	private SpriteSheet ramSprites;
 	private Animation ramAnimation;
+	private boolean ramming;
 
 	public Ram(Rectangle rect, Level level) throws SlickException {
-		super("Ram", rect, 2, level, 7, 7);
+		super("Ram", rect, 2, level, 7, 12);
 		this.rect = rect;
 		image = new Image("Data/gotman2.png");
         setUpAnimation();
@@ -50,6 +51,12 @@ public class Ram extends Enemy{
         ramAnimation.draw(xPos, this.getPos().y, width+5, image.getHeight());
     }
 	
+    public boolean getRamming(){
+    	return ramming;
+    }
+    public void setRamming(boolean ramming){
+    	this.ramming = ramming;
+    }
 	public void render(Graphics g){
         
         
@@ -61,8 +68,8 @@ public class Ram extends Enemy{
         g.fillRect(this.getPos().x+1, this.getPos().y - 9, (float)((health/startingHealth)*rect.getWidth()-1), 4);
         g.setColor(new Color(255,255,255));
         //g.draw(rect);
-        if(facing == DIRECTION_FACING.LEFT) g.drawString("<--", rect.getLocation().x+5, rect.getLocation().y+5);
-        if(facing == DIRECTION_FACING.RIGHT) g.drawString("-->", rect.getLocation().x+5, rect.getLocation().y+5);
+    //    if(facing == DIRECTION_FACING.LEFT) g.drawString("<--", rect.getLocation().x+5, rect.getLocation().y+5);
+       // if(facing == DIRECTION_FACING.RIGHT) g.drawString("-->", rect.getLocation().x+5, rect.getLocation().y+5);
 
     }
 

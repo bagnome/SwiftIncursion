@@ -80,7 +80,7 @@ public class EnemyAndBulletCollisionHandler implements ICollisionHandler{
             	level.addUpgrade(upgrade);
                 cm.addCollidable(upgrade);	
         	}
-        	if(enemy instanceof TankLizard)
+        	if(enemy instanceof TankLizard || enemy instanceof Bunny || enemy instanceof TaylorSwift)
         		level.setBossDefeated(true);
         	cm.removeCollidable(enemy);
             level.getEnemies().remove(enemy);

@@ -59,7 +59,7 @@ public class GamePlayState extends BasicGameState {
 	private Image bgMid;
 	private Image bgEnd;
 	private int moveBG;
-
+	private Timer timer;
 	private Image health;
 	private int maxEnemies;
 	private int enemiesSpawned;
@@ -83,7 +83,7 @@ public class GamePlayState extends BasicGameState {
 		stateId = id;
 		level = new Level(cm);
 		bullets = new ArrayList<Bullet>();
-
+		timer = new Timer();
 	}
 
 	@Override
@@ -137,11 +137,12 @@ public class GamePlayState extends BasicGameState {
 		switch (currentState) {
 
 		case PLAY:
-
+			
 			bgStart.draw(moveBG, 0);
 			bgMid.draw(moveBG + 800, 0);
 			bgEnd.draw(moveBG + 800 * 2, 0);
-
+			
+			g.drawString(timer.getTime(), 600, 25);
 			//player.render(g);
 			// base.render(g);
 			// wall.render(g);
@@ -213,7 +214,6 @@ public class GamePlayState extends BasicGameState {
 			}
 			if (GameInfo.getCurrentGameInfo().getLives() == 1)
 				health.draw();
-			
 			//g.draw(leftBound.getCollisionShape());
 			//g.draw(rightBound.getCollisionShape());
 			break;
@@ -231,7 +231,7 @@ public class GamePlayState extends BasicGameState {
 	}
 
 	@Override
-	public void update(GameContainer container, StateBasedGame game, int arg2)
+	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
 
 		// Input
@@ -240,6 +240,7 @@ public class GamePlayState extends BasicGameState {
 		switch (currentState) {
 
 		case PLAY:
+			timer.tick(delta);
 			if (container.getInput().isKeyPressed(input.KEY_Y))
 			{
 				GameInfo.getCurrentGameInfo().resetLives();
@@ -581,9 +582,10 @@ public class GamePlayState extends BasicGameState {
 
 			if (GameInfo.getCurrentGameInfo().getLives() == 0)
 				{
-				sm.dead();
-				gameState = 3;
-				currentState = STATE.EXIT;
+				//sm.dead();
+				//gameState = 3;
+				//timer.resetTimer();
+				//currentState = STATE.EXIT;
 				}
 			if (container.getInput().isKeyPressed(input.KEY_PAUSE))
 				currentState = STATE.PAUSED;
@@ -596,6 +598,7 @@ public class GamePlayState extends BasicGameState {
 			if (container.getInput().isKeyPressed(input.KEY_PAUSE)) {
 				sm.resumeMusic();
 				currentState = STATE.PLAY;
+				//timer.gameIsPaused(delta);
 			}
 			break;
 
@@ -604,11 +607,13 @@ public class GamePlayState extends BasicGameState {
 			if (container.getInput().isKeyPressed(input.KEY_ENTER)) {
 				gameState = 0;// game.enterState(0);
 				player.resetUpgrades();
+				timer.resetTimer();
 				currentState = STATE.EXIT;
 			}
 			if (container.getInput().isKeyPressed(input.KEY_ESCAPE)) {
 				sm.resumeMusic();
 				currentState = STATE.PLAY;
+				//timer.gameIsPaused(delta);
 			}
 			break;
 
@@ -649,6 +654,8 @@ public class GamePlayState extends BasicGameState {
 					+ GameInfo.getCurrentGameInfo().getLevelID() + ".txt")));
 		} catch (FileNotFoundException e) {
 			System.out.println("No level to load");
+			GameInfo.getCurrentGameInfo().recordTime(timer.getTime());
+			timer.resetTimer();
 			game.enterState(2);
 		}
 		bgStart = new Image(level.getBackgroundImages()[0]);

@@ -35,8 +35,8 @@ public class SwiftIncursion extends StateBasedGame{
 	@Override
 	public void initStatesList(GameContainer arg0) throws SlickException {
 	    addState(new MenuState(MENUSTATE));
+	    addState(new WinState(WINSTATE));
 	    addState(new GamePlayState(GAMEPLAYSTATE));
-		addState(new WinState(WINSTATE));
 		addState(new GameOverState(GAMEOVERSTATE));
 		GameInfo.creatNewGameInfo();
 	}

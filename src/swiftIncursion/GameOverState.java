@@ -87,7 +87,7 @@ public class GameOverState extends BasicGameState {
 	@Override
 	public void update(GameContainer container, StateBasedGame GameOverState, int arg2) throws SlickException {
 		Input input = container.getInput();
-		if(container.getInput().isKeyPressed(input.KEY_ENTER))
+		/*if(container.getInput().isKeyPressed(input.KEY_ENTER))
 		GameOverState.enterState(0);
 
 		if(container.getInput().isKeyPressed(input.KEY_ESCAPE))
@@ -98,7 +98,7 @@ public class GameOverState extends BasicGameState {
 			GameInfo.getCurrentGameInfo().resetLives();
 			GameOverState.enterState(1);
 			GameInfo.getCurrentGameInfo().resetLevelID();
-		}
+		}*/
 	
 		if (optionSelected == TRYAGAIN) {
 			GameInfo.getCurrentGameInfo().resetLives();

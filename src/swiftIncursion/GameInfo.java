@@ -10,6 +10,7 @@ public class GameInfo
     private boolean playerExists;
     private SoundAndMusic sm;
     private Player player;
+    private String time;
     
     public static GameInfo getCurrentGameInfo(){
         return _instance;
@@ -68,4 +69,11 @@ public class GameInfo
 		levelID = 1;
 	}
 
+	public void recordTime(String time){
+		this.time = time;
+	}
+	
+	public String getStoredTime(){
+		return time;
+	}
 }

@@ -582,10 +582,10 @@ public class GamePlayState extends BasicGameState {
 
 			if (GameInfo.getCurrentGameInfo().getLives() == 0)
 				{
-				//sm.dead();
-				//gameState = 3;
-				//timer.resetTimer();
-				//currentState = STATE.EXIT;
+				sm.dead();
+				gameState = 3;
+				timer.resetTimer();
+				currentState = STATE.EXIT;
 				}
 			if (container.getInput().isKeyPressed(input.KEY_PAUSE))
 				currentState = STATE.PAUSED;
